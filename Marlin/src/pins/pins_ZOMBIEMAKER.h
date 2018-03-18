@@ -151,8 +151,6 @@
 
 #define LED_PIN             4
 
-#undef NUM_RUNOUT_SENSORS
-#define NUM_RUNOUT_SENSORS  3
 #define FIL_RUNOUT_PIN     70
 #define FIL2_RUNOUT_PIN    71
 #define FIL3_RUNOUT_PIN    85
@@ -321,7 +319,7 @@
       #define BTN_ENC           31
 
       #define LCD_SDSS          53
-      #define SD_DETECT_PIN     49
+      #define SD_DETECT_PIN     82        // needs fixing
       #define KILL_PIN          41
 
     #elif ENABLED(MKS_MINI_12864)  // Added in Marlin 1.1.6

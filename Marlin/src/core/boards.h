@@ -112,6 +112,7 @@
 #define BOARD_GT2560_V3         76    // Geeetech GT2560 Rev B for A10(M/D)
 #define BOARD_GT2560_V3_MC2     73    // Geeetech GT2560 Rev B for Mecreator2																		   																	 
 #define BOARD_EINSTART_S        666   // Einstart retrofit
+#define BOARD_ZOMBIEMAKER       800   // braiiiiiiiinnnzzz
 
 //
 // ATmega1281, ATmega2561
