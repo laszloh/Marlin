@@ -391,31 +391,32 @@ namespace ExtUI {
         case 22:  // A22 move X/Y/Z or extrude
           if(!isPrinting()) {
             float coorvalue;
-            if(getCodeValue('E', cmdPtr, &coorvalue)) {
-              // we have an extruder move
-              extruder_t tool = getActiveTool();
+            unsigned int movespeed;
+            char val[30];
+            char dir = 0x00;
 
-              if(canMove(tool))
-                setAxisPosition_mm(getAxisPosition_mm(tool) + coorvalue, tool);
+            getCodeValue('F', cmdPtr, &coorvalue);
+            movespeed = (int)coorvalue;
 
-            } else {
-              // we have an axis move
-              axis_t axis;
+            if(getCodeValue('X', cmdPtr, &coorvalue))
+              dir = 'X';
+            else if(getCodeValue('Y', cmdPtr, &coorvalue))
+              dir = 'Y';
+            else if(getCodeValue('Z', cmdPtr, &coorvalue))
+              dir = 'Z';
+            else if(getCodeValue('E', cmdPtr, &coorvalue))
+              dir = 'E';
 
-              if(getCodeValue('X', cmdPtr, &coorvalue))
-                axis = X;
-              else if(getCodeValue('Y', cmdPtr, &coorvalue))
-                axis = Y;
-              else if(getCodeValue('Z', cmdPtr, &coorvalue))
-                axis = Z;
-              else {
-                // no axis ??
-                SERIAL_ECHOLNPAIR("MISSING AXIS COMMAND ", command);
-                return;
-              }
-
-              if(canMove(axis))
-                setAxisPosition_mm(getAxisPosition_mm(axis) + coorvalue, axis);
+            if(dir) {
+              if(coorvalue < 1 && coorvalue > 0)
+                sprintf_P(val, PSTR("G1 %c0.1F%i"), dir, movespeed);
+              else if(coorvalue < 0 && coorvalue > -1)
+                sprintf_P(val, PSTR("G1 %c-0.1F%i"), dir, movespeed);
+              else
+                sprintf_P(val, PSTR("G1 %c%iF%i"), dir, int(coorvalue), movespeed);
+              injectCommands_P(PSTR("G91"));
+              injectCommands(val);
+              injectCommands_P(PSTR("G90"));
             }
           }
           break;
@@ -455,13 +456,11 @@ namespace ExtUI {
               HandleSpecialMenu();
             else if(selectedFileName[0] == '/')
               fileList.changeDir(selectedFileName + 1);
-            else if(selectedFileName[0] == '.' && selectedFileName[1] == '.')
-              fileList.upDir();
             else {
               if(fileList.seek(selectedFileNr)) {
                 ANYCUBIC_SERIAL_COMMANDPGM("J20");
               }
-            }
+            }            
           }
           #ifdef ANYCUBIC_LCD_DEBUG
             SERIAL_ECHOLNPAIR("TFT Serial Debug: opening ...", selectedFileName);

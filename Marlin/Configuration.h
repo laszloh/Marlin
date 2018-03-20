@@ -142,13 +142,13 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 1
+#define EXTRUDERS 2
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-//#define SINGLENOZZLE
+#define SINGLENOZZLE
 
 // Save and restore temperature and fan speed on tool-change.
 // Set standby for the unselected tool with M104/106/109 T...
@@ -532,9 +532,6 @@
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
 
-  // Anycubic i3 Mega
-
-
   //#define DEFAULT_bedKp 97.1
   //#define DEFAULT_bedKi 1.41
   //#define DEFAULT_bedKd 1675.16
@@ -731,7 +728,7 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
-//#define DISTINCT_E_FACTORS
+#define DISTINCT_E_FACTORS
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
@@ -758,7 +755,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -778,15 +775,28 @@
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
- * Default Jerk limits (mm/s)
+ * Junction Deviation
+ *
+ * Use Junction Deviation instead of traditional Jerk Limiting
+ *
+ * See:
+ *   https://reprap.org/forum/read.php?1,739819
+ *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
+ */
+#define JUNCTION_DEVIATION
+#if ENABLED(JUNCTION_DEVIATION)
+  #define JUNCTION_DEVIATION_MM 0.02  // (mm) Distance from real junction edge
+#endif
+
+/**
+ * Default Jerk (mm/s)
  * Override with M205 X Y Z E
  *
  * "Jerk" specifies the minimum speed change that requires acceleration.
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
-#if ENABLED(CLASSIC_JERK)
+#if DISABLED(JUNCTION_DEVIATION)
   #define DEFAULT_XJERK  5.0
   #define DEFAULT_YJERK  5.0
   #define DEFAULT_ZJERK  0.3
@@ -990,9 +1000,8 @@
  */
 #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 
-// Most probes should stay away from the edges of the bed, but
-// with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+// Certain types of probes need to stay away from edges
+#define MIN_PROBE_EDGE 15
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (133*60)
@@ -2448,7 +2457,7 @@
 #define ANYCUBIC_LCD
 #if ENABLED(ANYCUBIC_LCD)
   #define EXTENSIBLE_UI
-//  #define ANYCUBIC_LCD_DEBUG
+  #define ANYCUBIC_LCD_DEBUG
 #endif
 
 //
