@@ -29,6 +29,9 @@
 #include "../../module/motion.h"
 #include "../../lcd/ultralcd.h"
 
+#if ENABLED(ANYCUBIC_TFT_MODEL)
+  #include "../../lcd/anycubic_TFT.h"
+#endif
 #if ENABLED(PRINTJOB_TIMER_AUTOSTART)
   #include "../../module/printcounter.h"
 #endif
@@ -64,9 +67,18 @@ void GcodeSuite::M190() {
   }
   else return;
 
+  #if ENABLED(ANYCUBIC_TFT_MODEL)
+    AnycubicTFT.BedHeatingStart();
+  #endif
+
   ui.set_status_P(thermalManager.isHeatingBed() ? PSTR(MSG_BED_HEATING) : PSTR(MSG_BED_COOLING));
 
   thermalManager.wait_for_bed(no_wait_for_cooling);
+  
+  #if ENABLED(ANYCUBIC_TFT_MODEL)
+    AnycubicTFT.BedHeatingDone();
+  #endif
+
 }
 
 #endif // HAS_HEATED_BED

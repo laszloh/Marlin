@@ -31,27 +31,36 @@
 
 #include "MarlinSerial.h"
 #include "InterruptVectors.h"
-#include "../../Marlin.h"
 
-template<typename Cfg> typename MarlinSerial<Cfg>::ring_buffer_r MarlinSerial<Cfg>::rx_buffer = { 0, 0, { 0 } };
-template<typename Cfg> typename MarlinSerial<Cfg>::ring_buffer_t MarlinSerial<Cfg>::tx_buffer = { 0 };
-template<typename Cfg> bool     MarlinSerial<Cfg>::_written = false;
-template<typename Cfg> uint8_t  MarlinSerial<Cfg>::xon_xoff_state = MarlinSerial<Cfg>::XON_XOFF_CHAR_SENT | MarlinSerial<Cfg>::XON_CHAR;
-template<typename Cfg> uint8_t  MarlinSerial<Cfg>::rx_dropped_bytes = 0;
-template<typename Cfg> uint8_t  MarlinSerial<Cfg>::rx_buffer_overruns = 0;
-template<typename Cfg> uint8_t  MarlinSerial<Cfg>::rx_framing_errors = 0;
-template<typename Cfg> typename MarlinSerial<Cfg>::ring_buffer_pos_t MarlinSerial<Cfg>::rx_max_enqueued = 0;
+  #include "MarlinSerial_Due.h"
+  #include "InterruptVectors_Due.h"
+  #include "../../Marlin.h"
 
+
+  typename MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::ring_buffer_r MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::rx_buffer; // = { { 0 }, 0, 0 };
+
+  typename MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::ring_buffer_t MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::tx_buffer; // = { { 0 }, 0, 0 };
+
+
+
+
+
+  template<TEMPLATE_SIG> uint8_t  MarlinSerial<TEMPLATE_ARG>::rx_buffer_overruns = 0;
+
+
+  template<TEMPLATE_SIG> uint8_t  MarlinSerial<TEMPLATE_ARG>::rx_framing_errors = 0;
+
+  template<TEMPLATE_SIG> typename MarlinSerial<TEMPLATE_ARG>::ring_buffer_pos_t MarlinSerial<TEMPLATE_ARG>::rx_max_enqueued = 0;
 // A SW memory barrier, to ensure GCC does not overoptimize loops
 #define sw_barrier() asm volatile("": : :"memory");
 
-#include "../../feature/emergency_parser.h"
+    #include "../../feature/emergency_parser.h"
 
 // (called with RX interrupts disabled)
-template<typename Cfg>
-FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
-
-  static EmergencyParser::State emergency_state; // = EP_RESET
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  FORCE_INLINE void store_rxd_char() {
+  FORCE_INLINE void MarlinSerial<TEMPLATE_ARG>::store_rxd_char() {
+      static EmergencyParser::State emergency_state; // = EP_RESET
 
   // Get the tail - Nothing can alter its value while we are at this ISR
   const ring_buffer_pos_t t = rx_buffer.tail;
@@ -60,11 +69,12 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
   ring_buffer_pos_t h = rx_buffer.head;
 
   // Get the next element
-  ring_buffer_pos_t i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
+    ring_buffer_pos_t i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
 
   // Read the character from the USART
   uint8_t c = HWUART->UART_RHR;
 
+    #if ENABLED(EMERGENCY_PARSER)
   if (Cfg::EMERGENCYPARSER) emergency_parser.update(emergency_state, c);
 
   // If the character is to be stored at the index just before the tail
@@ -74,26 +84,29 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
     rx_buffer.buffer[h] = c;
     h = i;
   }
-  else if (Cfg::DROPPED_RX && !++rx_dropped_bytes)
-    --rx_dropped_bytes;
+    else {
+    #if ENABLED(SERIAL_STATS_DROPPED_RX)
+      else if (!++rx_dropped_bytes) --rx_dropped_bytes;
 
-  const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
-  // Calculate count of bytes stored into the RX buffer
 
-  // Keep track of the maximum count of enqueued bytes
+      const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
+      // Calculate count of bytes stored into the RX buffer
+
+      // Keep track of the maximum count of enqueued bytes
+    if (STATS_MAX_RX_QUEUED)
   if (Cfg::MAX_RX_QUEUED) NOLESS(rx_max_enqueued, rx_count);
 
-  if (Cfg::XONOFF) {
+
     // If the last char that was sent was an XON
     if ((xon_xoff_state & XON_XOFF_CHAR_MASK) == XON_CHAR) {
 
       // Bytes stored into the RX buffer
-      const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
+        const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
 
       // If over 12.5% of RX buffer capacity, send XOFF before running out of
       // RX buffer space .. 325 bytes @ 250kbits/s needed to let the host react
       // and stop sending bytes. This translates to 13mS propagation time.
-      if (rx_count >= (Cfg::RX_SIZE) / 8) {
+        if (rx_count >= (RX_BUFFER_SIZE) / 8) {
 
         // At this point, definitely no TX interrupt was executing, since the TX isr can't be preempted.
         // Don't enable the TX interrupt here as a means to trigger the XOFF char, because if it happens
@@ -113,11 +126,12 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
           if (status & UART_SR_RXRDY) {
             // We received a char while waiting for the TX buffer to be empty - Receive and process it!
 
-            i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
+              i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
 
             // Read the character from the USART
             c = HWUART->UART_RHR;
 
+              #if ENABLED(EMERGENCY_PARSER)
             if (Cfg::EMERGENCYPARSER) emergency_parser.update(emergency_state, c);
 
             // If the character is to be stored at the index just before the tail
@@ -127,8 +141,10 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
               rx_buffer.buffer[h] = c;
               h = i;
             }
-            else if (Cfg::DROPPED_RX && !++rx_dropped_bytes)
-              --rx_dropped_bytes;
+              else {
+              #if ENABLED(SERIAL_STATS_DROPPED_RX)
+                else if (!++rx_dropped_bytes) --rx_dropped_bytes;
+              #endif
           }
           sw_barrier();
         }
@@ -147,11 +163,12 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
           if (status & UART_SR_RXRDY) {
             // A char arrived while waiting for the TX buffer to be empty - Receive and process it!
 
-            i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
+              i = (ring_buffer_pos_t)(h + 1) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
 
             // Read the character from the USART
             c = HWUART->UART_RHR;
 
+              #if ENABLED(EMERGENCY_PARSER)
             if (Cfg::EMERGENCYPARSER) emergency_parser.update(emergency_state, c);
 
             // If the character is to be stored at the index just before the tail
@@ -161,8 +178,10 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
               rx_buffer.buffer[h] = c;
               h = i;
             }
-            else if (Cfg::DROPPED_RX && !++rx_dropped_bytes)
-              --rx_dropped_bytes;
+              else {
+              #if ENABLED(SERIAL_STATS_DROPPED_RX)
+                else if (!++rx_dropped_bytes) --rx_dropped_bytes;
+              #endif
           }
           sw_barrier();
         }
@@ -177,14 +196,17 @@ FORCE_INLINE void MarlinSerial<Cfg>::store_rxd_char() {
   rx_buffer.head = h;
 }
 
+  template<TEMPLATE_SIG>
+  FORCE_INLINE void MarlinSerial<TEMPLATE_ARG>::_tx_thr_empty_irq(void) {
+  #if TX_BUFFER_SIZE > 0
 template<typename Cfg>
-FORCE_INLINE void MarlinSerial<Cfg>::_tx_thr_empty_irq(void) {
+    FORCE_INLINE void _tx_thr_empty_irq(void) {
   if (Cfg::TX_SIZE > 0) {
     // Read positions
     uint8_t t = tx_buffer.tail;
     const uint8_t h = tx_buffer.head;
 
-    if (Cfg::XONOFF) {
+      #if ENABLED(SERIAL_XON_XOFF)
       // If an XON char is pending to be sent, do it now
       if (xon_xoff_state == XON_CHAR) {
 
@@ -211,7 +233,7 @@ FORCE_INLINE void MarlinSerial<Cfg>::_tx_thr_empty_irq(void) {
 
     // There is something to TX, Send the next byte
     const uint8_t c = tx_buffer.buffer[t];
-    t = (t + 1) & (Cfg::TX_SIZE - 1);
+      t = (t + 1) & (TX_BUFFER_SIZE - 1);
     HWUART->UART_THR = c;
     tx_buffer.tail = t;
 
@@ -220,22 +242,25 @@ FORCE_INLINE void MarlinSerial<Cfg>::_tx_thr_empty_irq(void) {
   }
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::UART_ISR(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::UART_ISR(void) {
   const uint32_t status = HWUART->UART_SR;
 
   // Data received?
   if (status & UART_SR_RXRDY) store_rxd_char();
 
-  if (Cfg::TX_SIZE > 0) {
+    #if TX_BUFFER_SIZE > 0
     // Something to send, and TX interrupts are enabled (meaning something to send)?
     if ((status & UART_SR_TXRDY) && (HWUART->UART_IMR & UART_IMR_TXRDY)) _tx_thr_empty_irq();
   }
 
   // Acknowledge errors
   if ((status & UART_SR_OVRE) || (status & UART_SR_FRAME)) {
+      #if ENABLED(SERIAL_STATS_DROPPED_RX)
     if (Cfg::DROPPED_RX && (status & UART_SR_OVRE) && !++rx_dropped_bytes) --rx_dropped_bytes;
+      #if ENABLED(SERIAL_STATS_RX_BUFFER_OVERRUNS)
     if (Cfg::RX_OVERRUNS && (status & UART_SR_OVRE) && !++rx_buffer_overruns) --rx_buffer_overruns;
+      #if ENABLED(SERIAL_STATS_RX_FRAMING_ERRORS)
     if (Cfg::RX_FRAMING_ERRORS && (status & UART_SR_FRAME) && !++rx_framing_errors) --rx_framing_errors;
 
     // TODO: error reporting outside ISR
@@ -244,8 +269,8 @@ void MarlinSerial<Cfg>::UART_ISR(void) {
 }
 
 // Public Methods
-template<typename Cfg>
-void MarlinSerial<Cfg>::begin(const long baud_setting) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::begin(const long baud_setting) {
 
   // Disable UART interrupt in NVIC
   NVIC_DisableIRQ( HWUART_IRQ );
@@ -291,11 +316,13 @@ void MarlinSerial<Cfg>::begin(const long baud_setting) {
   // Enable receiver and transmitter
   HWUART->UART_CR = UART_CR_RXEN | UART_CR_TXEN;
 
+    #if TX_BUFFER_SIZE > 0
   if (Cfg::TX_SIZE > 0) _written = false;
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::end() {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::end() {
+  void MarlinSerial<TEMPLATE_ARG>::end() {
   // Disable UART interrupt in NVIC
   NVIC_DisableIRQ( HWUART_IRQ );
 
@@ -307,14 +334,16 @@ void MarlinSerial<Cfg>::end() {
   pmc_disable_periph_clk( HWUART_IRQ_ID );
 }
 
-template<typename Cfg>
-int MarlinSerial<Cfg>::peek(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  int MarlinSerial::peek(void) {
+  int MarlinSerial<TEMPLATE_ARG>::peek(void) {
   const int v = rx_buffer.head == rx_buffer.tail ? -1 : rx_buffer.buffer[rx_buffer.tail];
   return v;
 }
 
-template<typename Cfg>
-int MarlinSerial<Cfg>::read(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  int MarlinSerial::read(void) {
+  int MarlinSerial<TEMPLATE_ARG>::read(void) {
 
   const ring_buffer_pos_t h = rx_buffer.head;
   ring_buffer_pos_t t = rx_buffer.tail;
@@ -322,25 +351,25 @@ int MarlinSerial<Cfg>::read(void) {
   if (h == t) return -1;
 
   int v = rx_buffer.buffer[t];
-  t = (ring_buffer_pos_t)(t + 1) & (Cfg::RX_SIZE - 1);
+    t = (ring_buffer_pos_t)(t + 1) & (RX_BUFFER_SIZE - 1);
 
   // Advance tail
   rx_buffer.tail = t;
 
-  if (Cfg::XONOFF) {
+    #if ENABLED(SERIAL_XON_XOFF)
     // If the XOFF char was sent, or about to be sent...
     if ((xon_xoff_state & XON_XOFF_CHAR_MASK) == XOFF_CHAR) {
       // Get count of bytes in the RX buffer
-      const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(Cfg::RX_SIZE - 1);
+        const ring_buffer_pos_t rx_count = (ring_buffer_pos_t)(h - t) & (ring_buffer_pos_t)(RX_BUFFER_SIZE - 1);
       // When below 10% of RX buffer capacity, send XON before running out of RX buffer bytes
-      if (rx_count < (Cfg::RX_SIZE) / 10) {
-        if (Cfg::TX_SIZE > 0) {
+        if (rx_count < (RX_BUFFER_SIZE) / 10) {
+          #if TX_BUFFER_SIZE > 0
           // Signal we want an XON character to be sent.
           xon_xoff_state = XON_CHAR;
           // Enable TX isr.
           HWUART->UART_IER = UART_IER_TXRDY;
         }
-        else {
+          #else
           // If not using TX interrupts, we must send the XON char now
           xon_xoff_state = XON_CHAR | XON_XOFF_CHAR_SENT;
           while (!(HWUART->UART_SR & UART_SR_TXRDY)) sw_barrier();
@@ -353,44 +382,46 @@ int MarlinSerial<Cfg>::read(void) {
   return v;
 }
 
-template<typename Cfg>
-typename MarlinSerial<Cfg>::ring_buffer_pos_t MarlinSerial<Cfg>::available(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  ring_buffer_pos_t MarlinSerial::available(void) {
+  typename MarlinSerial<TEMPLATE_ARG>::ring_buffer_pos_t MarlinSerial<TEMPLATE_ARG>::available(void) {
   const ring_buffer_pos_t h = rx_buffer.head, t = rx_buffer.tail;
-  return (ring_buffer_pos_t)(Cfg::RX_SIZE + h - t) & (Cfg::RX_SIZE - 1);
+    return (ring_buffer_pos_t)(RX_BUFFER_SIZE + h - t) & (RX_BUFFER_SIZE - 1);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::flush(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::flush(void) {
+  void MarlinSerial<TEMPLATE_ARG>::flush(void) {
   rx_buffer.tail = rx_buffer.head;
 
-  if (Cfg::XONOFF) {
+    #if ENABLED(SERIAL_XON_XOFF)
     if ((xon_xoff_state & XON_XOFF_CHAR_MASK) == XOFF_CHAR) {
-      if (Cfg::TX_SIZE > 0) {
+        #if TX_BUFFER_SIZE > 0
         // Signal we want an XON character to be sent.
         xon_xoff_state = XON_CHAR;
         // Enable TX isr.
         HWUART->UART_IER = UART_IER_TXRDY;
       }
-      else {
+        #else
         // If not using TX interrupts, we must send the XON char now
         xon_xoff_state = XON_CHAR | XON_XOFF_CHAR_SENT;
         while (!(HWUART->UART_SR & UART_SR_TXRDY)) sw_barrier();
         HWUART->UART_THR = XON_CHAR;
+        #endif
       }
+    #endif
     }
-  }
 }
 
 template<typename Cfg>
-void MarlinSerial<Cfg>::write(const uint8_t c) {
-  _written = true;
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial<TEMPLATE_ARG>::write(const uint8_t c) {
+      _written = true;
 
-  if (Cfg::TX_SIZE == 0) {
     while (!(HWUART->UART_SR & UART_SR_TXRDY)) sw_barrier();
     HWUART->UART_THR = c;
   }
-  else {
-
+   
     // If the TX interrupts are disabled and the data register
     // is empty, just write the byte to the data register and
     // be done. This shortcut helps significantly improve the
@@ -403,7 +434,7 @@ void MarlinSerial<Cfg>::write(const uint8_t c) {
       return;
     }
 
-    const uint8_t i = (tx_buffer.head + 1) & (Cfg::TX_SIZE - 1);
+      const uint8_t i = (tx_buffer.head + 1) & (TX_BUFFER_SIZE - 1);
 
     // If global interrupts are disabled (as the result of being called from an ISR)...
     if (!ISRS_ENABLED()) {
@@ -429,24 +460,19 @@ void MarlinSerial<Cfg>::write(const uint8_t c) {
     HWUART->UART_IER = UART_IER_TXRDY;
   }
 }
-
+  }
 template<typename Cfg>
-void MarlinSerial<Cfg>::flushTX(void) {
-  // TX
+    void MarlinSerial::flushTX(void) {
+  template<TEMPLATE_SIG>
+  void MarlinSerial<TEMPLATE_ARG>::flushTX(void) {
+      // TX
 
-  if (Cfg::TX_SIZE == 0) {
-    // No bytes written, no need to flush. This special case is needed since there's
-    // no way to force the TXC (transmit complete) bit to 1 during initialization.
     if (!_written) return;
 
-    // Wait until everything was transmitted
     while (!(HWUART->UART_SR & UART_SR_TXEMPTY)) sw_barrier();
 
-    // At this point nothing is queued anymore (DRIE is disabled) and
-    // the hardware finished transmission (TXC is set).
 
   }
-  else {
     // If we have never written a byte, no need to flush. This special
     // case is needed since there is no way to force the TXC (transmit
     // complete) bit to 1 during initialization
@@ -471,34 +497,40 @@ void MarlinSerial<Cfg>::flushTX(void) {
     // At this point nothing is queued anymore (DRIE is disabled) and
     // the hardware finished transmission (TXC is set).
   }
-}
+    }
 
+ 
 /**
  * Imports from print.h
  */
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(char c, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(char c, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(char c, int base) {
   print((long)c, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(unsigned char b, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(unsigned char b, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(unsigned char b, int base) {
   print((unsigned long)b, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(int n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(int n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(int n, int base) {
   print((long)n, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(unsigned int n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(unsigned int n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(unsigned int n, int base) {
   print((unsigned long)n, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(long n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(long n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(long n, int base) {
   if (base == 0) write(n);
   else if (base == 10) {
     if (n < 0) { print('-'); n = -n; }
@@ -508,80 +540,92 @@ void MarlinSerial<Cfg>::print(long n, int base) {
     printNumber(n, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(unsigned long n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(unsigned long n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::print(unsigned long n, int base) {
   if (base == 0) write(n);
   else printNumber(n, base);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::print(double n, int digits) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::print(double n, int digits) {
+  void MarlinSerial<TEMPLATE_ARG>::print(double n, int digits) {
   printFloat(n, digits);
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(void) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(void) {
+  void MarlinSerial<TEMPLATE_ARG>::println(void) {
   print('\r');
   print('\n');
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(const String& s) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(const String& s) {
+  void MarlinSerial<TEMPLATE_ARG>::println(const String& s) {
   print(s);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(const char c[]) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(const char c[]) {
+  void MarlinSerial<TEMPLATE_ARG>::println(const char c[]) {
   print(c);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(char c, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(char c, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(char c, int base) {
   print(c, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(unsigned char b, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(unsigned char b, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(unsigned char b, int base) {
   print(b, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(int n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(int n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(int n, int base) {
   print(n, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(unsigned int n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(unsigned int n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(unsigned int n, int base) {
   print(n, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(long n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(long n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(long n, int base) {
   print(n, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(unsigned long n, int base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(unsigned long n, int base) {
+  void MarlinSerial<TEMPLATE_ARG>::println(unsigned long n, int base) {
   print(n, base);
   println();
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::println(double n, int digits) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::println(double n, int digits) {
+  void MarlinSerial<TEMPLATE_ARG>::println(double n, int digits) {
   print(n, digits);
   println();
 }
 
 // Private Methods
-template<typename Cfg>
-void MarlinSerial<Cfg>::printNumber(unsigned long n, uint8_t base) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial<portNr, RX_SIZE, TX_SIZE, USE_XONOFF, USE_EMERGENCYPARSER, STATS_DROPPED_RX, STATS_RX_OVERRUNS, STATS_RX_FRAMING_ERRORS, STATS_MAX_RX_QUEUED>::printNumber(unsigned long n, uint8_t base) {
   if (n) {
     unsigned char buf[8 * sizeof(long)]; // Enough space for base 2
     int8_t i = 0;
@@ -596,8 +640,9 @@ void MarlinSerial<Cfg>::printNumber(unsigned long n, uint8_t base) {
     print('0');
 }
 
-template<typename Cfg>
-void MarlinSerial<Cfg>::printFloat(double number, uint8_t digits) {
+  template<int portNr, int RX_SIZE,int TX_SIZE, bool USE_XONOFF, bool USE_EMERGENCYPARSER, bool STATS_DROPPED_RX, bool STATS_RX_OVERRUNS, bool STATS_RX_FRAMING_ERRORS, bool STATS_MAX_RX_QUEUED>
+  void MarlinSerial::printFloat(double number, uint8_t digits) {
+  void MarlinSerial<TEMPLATE_ARG>::printFloat(double number, uint8_t digits) {
   // Handle negative numbers
   if (number < 0.0) {
     print('-');
@@ -627,14 +672,28 @@ void MarlinSerial<Cfg>::printFloat(double number, uint8_t digits) {
   }
 }
 
-// If not using the USB port as serial port
-#if SERIAL_PORT >= 0
+  template class MarlinSerial<
+    RX_BUFFER_SIZE,
+    TX_BUFFER_SIZE,
+    bSERIAL_XON_XOFF,
+    bEMERGENCY_PARSER,
+    bSERIAL_STATS_DROPPED_RX,
+    bSERIAL_STATS_RX_BUFFER_OVERRUNS,
+    bSERIAL_STATS_RX_FRAMING_ERRORS,
+    bSERIAL_STATS_MAX_RX_QUEUED
+  >;
 
   // Preinstantiate
-  template class MarlinSerial<MarlinSerialCfg<SERIAL_PORT>>;
-
-  // Instantiate
-  MarlinSerial<MarlinSerialCfg<SERIAL_PORT>> customizedSerial1;
+    SERIAL_PORT,
+    RX_BUFFER_SIZE,
+    TX_BUFFER_SIZE,
+    bSERIAL_XON_XOFF,
+    bEMERGENCY_PARSER,
+    bSERIAL_STATS_DROPPED_RX,
+    bSERIAL_STATS_RX_BUFFER_OVERRUNS,
+    bSERIAL_STATS_RX_FRAMING_ERRORS,
+    bSERIAL_STATS_MAX_RX_QUEUED
+  MarlinSerial customizedSerial;
 
 #endif
 

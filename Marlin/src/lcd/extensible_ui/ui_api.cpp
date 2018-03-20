@@ -49,6 +49,7 @@
 #include "../../gcode/queue.h"
 #include "../../module/motion.h"
 #include "../../module/planner.h"
+#include "../../module/printcounter.h"
 #include "../../module/probe.h"
 #include "../../module/temperature.h"
 #include "../../module/printcounter.h"
@@ -549,7 +550,7 @@ namespace ExtUI {
 
   void setAxisSteps_per_mm(const float value, const extruder_t extruder) {
     UNUSED_E(extruder);
-    planner.settings.axis_steps_per_mm[E_AXIS_N(axis - E0)] = value;
+    planner.settings.axis_steps_per_mm[E_AXIS_N(extruder - E0)] = value;
   }
 
   float getAxisMaxFeedrate_mm_s(const axis_t axis) {
@@ -558,7 +559,7 @@ namespace ExtUI {
 
   float getAxisMaxFeedrate_mm_s(const extruder_t extruder) {
     UNUSED_E(extruder);
-    return planner.settings.max_feedrate_mm_s[E_AXIS_N(axis - E0)];
+    return planner.settings.max_feedrate_mm_s[E_AXIS_N(extruder - E0)];
   }
 
   void setAxisMaxFeedrate_mm_s(const float value, const axis_t axis) {
@@ -567,7 +568,7 @@ namespace ExtUI {
 
   void setAxisMaxFeedrate_mm_s(const float value, const extruder_t extruder) {
     UNUSED_E(extruder);
-    planner.settings.max_feedrate_mm_s[E_AXIS_N(axis - E0)] = value;
+    planner.settings.max_feedrate_mm_s[E_AXIS_N(extruder - E0)] = value;
   }
 
   float getAxisMaxAcceleration_mm_s2(const axis_t axis) {
@@ -831,7 +832,9 @@ namespace ExtUI {
     queue.inject_P(gcode);
   }
 
-  bool commandsInQueue() { return (planner.movesplanned() || queue.has_commands_queued()); }
+  void injectCommands(const char* gcode) {
+    queue.enqueue_one_now(gcode);
+  }
 
   bool isAxisPositionKnown(const axis_t axis) {
     return TEST(axis_known_position, axis);
