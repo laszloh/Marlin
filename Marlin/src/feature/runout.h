@@ -116,16 +116,12 @@ class TFilamentMonitor : public FilamentMonitorBase {
       }
     }
 
-    // Give the response a chance to update its counter.
-    static inline void run() {
-      if ( enabled && !filament_ran_out
-        && (printingIsActive() || TERN0(ADVANCED_PAUSE_FEATURE, did_pause_print))
-      ) {
-        TERN_(HAS_FILAMENT_RUNOUT_DISTANCE, cli()); // Prevent RunoutResponseDelayed::block_completed from accumulating here
-        response.run();
-        sensor.run();
-        const bool ran_out = response.has_run_out();
-        TERN_(HAS_FILAMENT_RUNOUT_DISTANCE, sei());
+    FORCE_INLINE static void run() {
+      if ((IS_SD_PRINTING || print_job_timer.isRunning()) && check() && !filament_ran_out) {
+        filament_ran_out = true;
+        enqueue_and_echo_commands_P(PSTR(FILAMENT_RUNOUT_SCRIPT));
+        stepper.synchronize();
+        #endif
         if (ran_out) {
           filament_ran_out = true;
           event_filament_runout();

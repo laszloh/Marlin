@@ -2,7 +2,7 @@
  * AnycubicTFT.h  --- Support for Anycubic i3 Mega TFT
  * Created by Christian Hopp on 09.12.17.
  * Modified by Laszlo Hegedues on 20.3.2018
- * 
+ *
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -23,12 +23,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
- 
+
 #ifndef AnycubicTFT_h
 #define AnycubicTFT_h
 
 #include <stdio.h>
-#include "MarlinConfig.h"
 
 char *itostr2(const uint8_t &x);
 
@@ -61,7 +60,7 @@ public:
   void HeatingStart();
   void FilamentRunout();
   void KillTFT();
-  
+
 private:
   char TFTcmdbuffer[TFTBUFSIZE][TFT_MAX_CMD_SIZE];
   int TFTbuflen=0;
@@ -78,7 +77,7 @@ private:
   uint8_t tmp_extruder=0;
   char LastSDstatus=0;
   uint16_t HeaterCheckCount=0;
-  
+
   struct OutageDataStruct {
     char OutageDataVersion;
     char OutageFlag;
@@ -87,10 +86,10 @@ private:
     float last_hotend_temp;
     long lastSDposition;
   } OutageData;
-  
+
   void WriteOutageEEPromData();
   void ReadOutageEEPromData();
-  
+
   float CodeValue();
   bool CodeSeen(char);
   void Ls();
@@ -102,14 +101,12 @@ private:
   void CheckSDCardChange();
   void CheckHeaterError();
   void HandleSpecialMenu();
-  
+
   char     SelectedDirectory[30];
   uint8_t  SpecialMenu=false;
 
-#if ENABLED(ANYCUBIC_FILAMENT_RUNOUT_SENSOR)
-  char FilamentTestStatus=false;
-  char FilamentTestLastStatus=false;
-  long FilamentRunoutCounter=0;
+#if ENABLED(FILAMENT_RUNOUT_SENSOR)
+  bool filamentRunout=false;
 #endif
 };
 

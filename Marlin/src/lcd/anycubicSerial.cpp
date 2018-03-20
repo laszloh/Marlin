@@ -2,7 +2,7 @@
  * AnycubicSerial.cpp  --- Support for Anycubic i3 Mega TFT serial connection
  * Created by Christian Hopp on 09.12.17.
  * Modified by Laszlo Hegedues on 20.3.2018
- * 
+ *
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -33,12 +33,13 @@
 #include <inttypes.h>
 #include "Arduino.h"
 #include "wiring_private.h"
-#include "MarlinConfig.h"
+
+#include "../inc/MarlinConfig.h"
 
 
 #ifdef ANYCUBIC_TFT_MODEL
 
-// this next line disables the entire HardwareSerial.cpp, 
+// this next line disables the entire HardwareSerial.cpp,
 // this is so I can support Attiny series and any other chip without a uart
 #if defined(UBRR3H)
 
@@ -68,7 +69,7 @@ struct ring_buffer
 
 inline void store_char(unsigned char c, ring_buffer *buffer)
 {
-  int i = (unsigned int)(buffer->head + 1) % SERIAL_BUFFER_SIZE;
+  unsigned int i = (unsigned int)(buffer->head + 1) % SERIAL_BUFFER_SIZE;
 
   // if we should be storing the received character into the location
   // just before the tail (meaning that the head would advance to the
@@ -91,6 +92,7 @@ inline void store_char(unsigned char c, ring_buffer *buffer)
       store_char(c, &rx_buffer_ajg);
     } else {
       unsigned char c = UDR3;
+      UNUSED(c);
     };
   }
 #endif
@@ -106,7 +108,7 @@ ISR(USART3_UDRE_vect)
     // There is more data in the output buffer. Send the next byte
     unsigned char c = tx_buffer_ajg.buffer[tx_buffer_ajg.tail];
     tx_buffer_ajg.tail = (tx_buffer_ajg.tail + 1) % SERIAL_BUFFER_SIZE;
-	
+
     UDR3 = c;
   }
 }
@@ -153,7 +155,7 @@ void AnycubicSerialClass::begin(unsigned long baud)
 #endif
 
 try_again:
-  
+
   if (use_u2x) {
     *_ucsra = 1 << _u2x;
     baud_setting = (F_CPU / 4 / baud - 1) / 2;
@@ -161,7 +163,7 @@ try_again:
     *_ucsra = 0;
     baud_setting = (F_CPU / 8 / baud - 1) / 2;
   }
-  
+
   if ((baud_setting > 4095) && use_u2x)
   {
     use_u2x = false;
@@ -183,7 +185,7 @@ try_again:
 void AnycubicSerialClass::begin(unsigned long baud, byte config)
 {
   uint16_t baud_setting;
-  uint8_t current_config;
+//  uint8_t current_config;
   bool use_u2x = true;
 
 #if F_CPU == 16000000UL
@@ -196,7 +198,7 @@ void AnycubicSerialClass::begin(unsigned long baud, byte config)
 #endif
 
 try_again:
-  
+
   if (use_u2x) {
     *_ucsra = 1 << _u2x;
     baud_setting = (F_CPU / 4 / baud - 1) / 2;
@@ -204,7 +206,7 @@ try_again:
     *_ucsra = 0;
     baud_setting = (F_CPU / 8 / baud - 1) / 2;
   }
-  
+
   if ((baud_setting > 4095) && use_u2x)
   {
     use_u2x = false;
@@ -220,7 +222,7 @@ try_again:
   config |= 0x80; // select UCSRC register (shared with UBRRH)
 #endif
   *_ucsrc = config;
-  
+
   sbi(*_ucsrb, _rxen);
   sbi(*_ucsrb, _txen);
   sbi(*_ucsrb, _rxcie);
@@ -235,9 +237,9 @@ void AnycubicSerialClass::end()
 
   cbi(*_ucsrb, _rxen);
   cbi(*_ucsrb, _txen);
-  cbi(*_ucsrb, _rxcie);  
+  cbi(*_ucsrb, _rxcie);
   cbi(*_ucsrb, _udrie);
-  
+
   // clear any received data
   _rx_buffer->head = _rx_buffer->tail;
 }
@@ -277,22 +279,22 @@ void AnycubicSerialClass::flush()
 
 size_t AnycubicSerialClass::write(uint8_t c)
 {
-  int i = (_tx_buffer->head + 1) % SERIAL_BUFFER_SIZE;
-	
-  // If the output buffer is full, there's nothing for it other than to 
+  unsigned int i = (_tx_buffer->head + 1) % SERIAL_BUFFER_SIZE;
+
+  // If the output buffer is full, there's nothing for it other than to
   // wait for the interrupt handler to empty it a bit
   // ???: return 0 here instead?
   while (i == _tx_buffer->tail)
     ;
-	
+
   _tx_buffer->buffer[_tx_buffer->head] = c;
   _tx_buffer->head = i;
-	
+
   sbi(*_ucsrb, _udrie);
   // clear the TXC bit -- "can be cleared by writing a one to its bit location"
   transmitting = true;
   sbi(*_ucsra, TXC0);
-  
+
   return 1;
 }
 

@@ -29,6 +29,10 @@
 
 #include "../../inc/MarlinConfig.h"
 
+#if ENABLED(ULTIPANEL)
+  #include "../../lcd/ultralcd.h"
+#endif
+
 #if HAS_SUICIDE
   #include "../../MarlinCore.h"
 #endif
