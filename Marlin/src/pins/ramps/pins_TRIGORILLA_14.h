@@ -25,7 +25,11 @@
  * Arduino Mega with RAMPS v1.4 for Anycubic
  */
 
-#define BOARD_INFO_NAME "Anycubic RAMPS 1.4"
+ #if ENABLED(TARGET_LPC1768)
+   #error "Oops!  Set MOTHERBOARD to an LPC1768-based board when building for LPC1768."
+ #elif defined(__STM32F1__)
+   #error "Oops!  Set MOTHERBOARD to an STM32F1-based board when building for STM32F1."
+ #endif
 
 // Board labeled pins:
 
@@ -37,7 +41,6 @@
 #define TG_FAN1_PIN                            7  // Anycubic Kossel: Unused
 #define TG_FAN2_PIN                           44  // Anycubic Kossel: Hotend fan
 
-//
 // Servos
 //
 #if MB(TRIGORILLA_14_11)
@@ -45,9 +48,11 @@
   #define SERVO1_PIN                           4
   #define SERVO2_PIN                          11
   #define SERVO3_PIN                           6
-#endif
 
-// Remap MOSFET pins to common usages:
+
+	#if NUM_SERVOS > 2
+		#define SERVO2_PIN    5
+	#endif
 
 #define RAMPS_D10_PIN            TG_HEATER_0_PIN  // HEATER_0_PIN is always RAMPS_D10_PIN in pins_RAMPS.h
 
@@ -75,6 +80,9 @@
   #define RAMPS_D8_PIN               TG_FAN0_PIN
 #endif
 
+#if ENABLED(ANYCUBIC_LCD)
+ #define BEEPER_PIN       31
+ #define SD_DETECT_PIN    49
 #if HAS_MULTI_HOTEND || TEMP_SENSOR_BED           // EEF, EEB, EFB
   #define FAN1_PIN                   TG_FAN1_PIN
 #endif
@@ -96,12 +104,10 @@
 //  There are also other things that have been wired in creative ways.
 //  To enable PIN definitions for a specific printer model, #define the appropriate symbol after
 //  MOTHERBOARD in Configuration.h
-
 //
 // Limit Switches
 //
 //#define ANYCUBIC_4_MAX_PRO_ENDSTOPS
-
 #if ENABLED(ANYCUBIC_4_MAX_PRO_ENDSTOPS)
   #define X_MAX_PIN                           43
   #define Y_STOP_PIN                          19
@@ -120,9 +126,23 @@
   #endif
   #define BEEPER_PIN                          31
   #define SD_DETECT_PIN                       49
-#endif
 
-#include "pins_RAMPS.h"
+			#define SD_DETECT_PIN 49
+			#if ENABLED(LCD_I2C_PANELOLU2)
+				#define BTN_EN1 47  //reverse if the encoder turns the wrong way.
+				#define BTN_EN2 43
+				#define BTN_ENC 32
+				#define SDSS 53
+				#define SD_DETECT_PIN -1
+				#define KILL_PIN 41
+			#elif ENABLED(LCD_I2C_VIKI)
+				#define BTN_EN1 22  //reverse if the encoder turns the wrong way.
+				#define BTN_EN2 7
+				#define BTN_ENC -1
+				#define SDSS 53
+				#define SD_DETECT_PIN 49
+			#elif ENABLED(FULL_GRAPHIC_SMALL_PANEL)
+				#define BEEPER_PIN 37
 
 //
 // AnyCubic made the following changes to 1.1.0-RC8
