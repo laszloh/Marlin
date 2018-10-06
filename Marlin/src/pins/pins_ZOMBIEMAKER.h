@@ -88,7 +88,7 @@
 #define E2_DIR_PIN         33
 #define E2_ENABLE_PIN      31
 
-#if ENABLED(HAVE_TMC2208)
+#if HAS_DRIVER(TMC2208)
   /**
    * TMC2208 stepper drivers
    *
