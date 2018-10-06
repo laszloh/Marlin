@@ -1,0 +1,3438 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr User 16995 11576
+encoding utf-8
+Sheet 1 5
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	4900 1700 5600 1700
+Wire Wire Line
+	5600 1700 5600 2400
+Text GLabel 4900 1700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	6600 2300 6600 2400
+Text GLabel 6600 2300 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	4900 3800 5600 3800
+Wire Wire Line
+	5600 3800 5600 4500
+Text GLabel 4900 3800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	6600 4400 6600 4500
+Text GLabel 6600 4400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	4900 5800 5600 5800
+Wire Wire Line
+	5600 5800 5600 6500
+Text GLabel 4900 5800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	6600 6400 6600 6500
+Text GLabel 6600 6400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 2100 13100 1800
+Wire Wire Line
+	13100 1800 13100 1200
+Wire Wire Line
+	13100 1200 12800 1200
+Wire Wire Line
+	13100 1800 12800 1800
+Connection ~ 13100 1800
+Text GLabel 13100 2100 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 4700 13100 4400
+Wire Wire Line
+	13100 4400 13100 3800
+Wire Wire Line
+	12800 4400 13100 4400
+Wire Wire Line
+	13100 3800 12800 3800
+Connection ~ 13100 4400
+Text GLabel 13100 4700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 6000 13100 5700
+Wire Wire Line
+	13100 5700 13100 5100
+Wire Wire Line
+	12800 5700 13100 5700
+Wire Wire Line
+	13100 5100 12800 5100
+Connection ~ 13100 5700
+Text GLabel 13100 6000 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 7300 13100 7000
+Wire Wire Line
+	13100 7000 13100 6400
+Wire Wire Line
+	12800 7000 13100 7000
+Wire Wire Line
+	12800 6400 13100 6400
+Connection ~ 13100 7000
+Text GLabel 13100 7300 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 8600 13100 8300
+Wire Wire Line
+	13100 8300 13100 7700
+Wire Wire Line
+	12800 8300 13100 8300
+Wire Wire Line
+	12800 7700 13100 7700
+Connection ~ 13100 8300
+Text GLabel 13100 8600 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	1800 1700 2500 1700
+Wire Wire Line
+	2500 1700 2500 2400
+Text GLabel 1800 1700 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	3500 2300 3500 2400
+Text GLabel 3500 2300 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	1800 3800 2500 3800
+Wire Wire Line
+	2500 3800 2500 4500
+Text GLabel 1800 3800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	3500 4400 3500 4500
+Text GLabel 3500 4400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	1800 5800 2500 5800
+Wire Wire Line
+	2500 5800 2500 6500
+Text GLabel 1800 5800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	3500 6400 3500 6500
+Text GLabel 3500 6400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13100 3400 13100 3100
+Wire Wire Line
+	13100 3100 13100 2500
+Wire Wire Line
+	12800 3100 13100 3100
+Wire Wire Line
+	13100 2500 12800 2500
+Connection ~ 13100 3100
+Text GLabel 13100 3400 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 8600 13900 8400
+Text GLabel 13900 8600 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 7200 13900 7300
+Text GLabel 13900 7200 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 5800 13900 6100
+Text GLabel 13900 5800 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 4500 13900 4700
+Text GLabel 13900 4500 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 1900 13900 2100
+Text GLabel 13900 1900 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	13900 3500 13900 3200
+Text GLabel 13900 3500 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	5600 1000 5600 900 
+Text GLabel 5600 1000 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	5600 3100 5600 3000
+Text GLabel 5600 3100 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	5600 5100 5600 5000
+Text GLabel 5600 5100 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	12800 1900 13700 1900
+Wire Wire Line
+	13700 1900 13700 1400
+Wire Wire Line
+	13700 1400 13700 1100
+Wire Wire Line
+	13700 1400 13900 1400
+Wire Wire Line
+	13900 1400 13900 1600
+Connection ~ 13700 1400
+Text GLabel 12800 1900 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	12800 4500 13700 4500
+Wire Wire Line
+	13700 4500 13700 4000
+Wire Wire Line
+	13700 4000 13700 3700
+Wire Wire Line
+	13700 4000 13900 4000
+Wire Wire Line
+	13900 4000 13900 4200
+Connection ~ 13700 4000
+Text GLabel 12800 4500 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	13700 5000 13700 5300
+Wire Wire Line
+	13700 5300 13700 5800
+Wire Wire Line
+	13700 5800 12800 5800
+Wire Wire Line
+	13700 5300 13900 5300
+Wire Wire Line
+	13900 5300 13900 5500
+Connection ~ 13700 5300
+Text GLabel 13700 5000 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	13700 6300 13700 6600
+Wire Wire Line
+	13700 6600 13700 7100
+Wire Wire Line
+	13700 7100 12800 7100
+Wire Wire Line
+	13900 6900 13900 6600
+Wire Wire Line
+	13900 6600 13700 6600
+Connection ~ 13700 6600
+Text GLabel 13700 6300 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	13700 7600 13700 7900
+Wire Wire Line
+	13700 7900 13700 8400
+Wire Wire Line
+	13700 8400 12800 8400
+Wire Wire Line
+	13900 8100 13900 7900
+Wire Wire Line
+	13900 7900 13700 7900
+Connection ~ 13700 7900
+Text GLabel 13700 7600 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	2500 1000 2500 900 
+Text GLabel 2500 1000 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	2500 3100 2500 3000
+Text GLabel 2500 3100 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	2500 5100 2500 5000
+Text GLabel 2500 5100 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	12800 3200 13700 3200
+Wire Wire Line
+	13700 3200 13700 2600
+Wire Wire Line
+	13700 2600 13700 2400
+Wire Wire Line
+	13900 2900 13900 2600
+Wire Wire Line
+	13900 2600 13700 2600
+Connection ~ 13700 2600
+Text GLabel 12800 3200 0    10   BiDi ~ 0
++12V
+Wire Wire Line
+	5900 900  5900 1000
+Wire Wire Line
+	5900 1000 5900 1100
+Wire Wire Line
+	5900 1000 6200 1000
+Wire Wire Line
+	6600 1000 6200 1000
+Wire Wire Line
+	6600 1000 6600 1400
+Connection ~ 5900 1000
+Connection ~ 6200 1000
+Text GLabel 5900 900  0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	5900 3000 5900 3100
+Wire Wire Line
+	5900 3100 5900 3200
+Wire Wire Line
+	5900 3100 6200 3100
+Wire Wire Line
+	6600 3100 6200 3100
+Wire Wire Line
+	6600 3100 6600 3500
+Connection ~ 5900 3100
+Connection ~ 6200 3100
+Text GLabel 5900 3000 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	5900 5000 5900 5100
+Wire Wire Line
+	5900 5100 5900 5200
+Wire Wire Line
+	5900 5100 6200 5100
+Wire Wire Line
+	6600 5100 6200 5100
+Wire Wire Line
+	6600 5100 6600 5500
+Connection ~ 5900 5100
+Connection ~ 6200 5100
+Text GLabel 5900 5000 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	13200 1100 13200 1300
+Wire Wire Line
+	12800 1300 13200 1300
+Text GLabel 13200 1100 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 1600 10300 1600
+Wire Wire Line
+	10300 1600 10300 1300
+Wire Wire Line
+	10700 1700 10300 1700
+Wire Wire Line
+	10300 1700 10300 1600
+Wire Wire Line
+	10400 1800 10300 1800
+Wire Wire Line
+	10300 1800 10300 1700
+Connection ~ 10300 1600
+Connection ~ 10300 1700
+Text GLabel 11000 1600 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	13200 3700 13200 3900
+Wire Wire Line
+	13200 3900 12800 3900
+Text GLabel 13200 3700 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 4200 10300 4200
+Wire Wire Line
+	10300 4200 10300 3900
+Wire Wire Line
+	10700 4300 10300 4300
+Wire Wire Line
+	10300 4300 10300 4200
+Wire Wire Line
+	10400 4400 10300 4400
+Wire Wire Line
+	10300 4400 10300 4300
+Connection ~ 10300 4200
+Connection ~ 10300 4300
+Text GLabel 11000 4200 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 5500 10300 5500
+Wire Wire Line
+	10300 5500 10300 5200
+Wire Wire Line
+	10700 5600 10300 5600
+Wire Wire Line
+	10300 5600 10300 5500
+Wire Wire Line
+	10400 5700 10300 5700
+Wire Wire Line
+	10300 5700 10300 5600
+Connection ~ 10300 5500
+Connection ~ 10300 5600
+Text GLabel 11000 5500 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	13200 6300 13200 6500
+Wire Wire Line
+	12800 6500 13200 6500
+Text GLabel 13200 6300 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 6800 10300 6800
+Wire Wire Line
+	10300 6800 10300 6500
+Wire Wire Line
+	10700 6900 10300 6900
+Wire Wire Line
+	10300 6900 10300 6800
+Wire Wire Line
+	10400 7000 10300 7000
+Wire Wire Line
+	10300 7000 10300 6900
+Connection ~ 10300 6800
+Connection ~ 10300 6900
+Text GLabel 11000 6800 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	13200 7600 13200 7800
+Wire Wire Line
+	12800 7800 13200 7800
+Text GLabel 13200 7600 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 8100 10300 8100
+Wire Wire Line
+	10300 8100 10300 7800
+Wire Wire Line
+	10700 8200 10300 8200
+Wire Wire Line
+	10300 8200 10300 8100
+Wire Wire Line
+	10400 8300 10300 8300
+Wire Wire Line
+	10300 8300 10300 8200
+Connection ~ 10300 8100
+Connection ~ 10300 8200
+Text GLabel 11000 8100 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 7600 10900 7500
+Text GLabel 10900 7600 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 6300 10900 6200
+Text GLabel 10900 6300 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 5000 10900 4900
+Text GLabel 10900 5000 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 1100 10900 1000
+Text GLabel 10900 1100 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 3700 10900 3600
+Text GLabel 10900 3700 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	12800 5200 13200 5200
+Wire Wire Line
+	13200 5200 13200 5000
+Text GLabel 12800 5200 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	2800 900  2800 1000
+Wire Wire Line
+	2800 1000 2800 1100
+Wire Wire Line
+	2800 1000 3100 1000
+Wire Wire Line
+	3500 1000 3100 1000
+Wire Wire Line
+	3500 1000 3500 1400
+Connection ~ 2800 1000
+Connection ~ 3100 1000
+Text GLabel 2800 900  0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	2800 3000 2800 3100
+Wire Wire Line
+	2800 3100 2800 3200
+Wire Wire Line
+	2800 3100 3100 3100
+Wire Wire Line
+	3500 3100 3100 3100
+Wire Wire Line
+	3500 3100 3500 3500
+Connection ~ 2800 3100
+Connection ~ 3100 3100
+Text GLabel 2800 3000 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	2800 5000 2800 5100
+Wire Wire Line
+	2800 5100 2800 5200
+Wire Wire Line
+	2800 5100 3100 5100
+Wire Wire Line
+	3500 5100 3100 5100
+Wire Wire Line
+	3500 5100 3500 5500
+Connection ~ 2800 5100
+Connection ~ 3100 5100
+Text GLabel 2800 5000 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	13200 2400 13200 2600
+Wire Wire Line
+	13200 2600 12800 2600
+Text GLabel 13200 2400 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	11000 2900 10300 2900
+Wire Wire Line
+	10300 2900 10300 2600
+Wire Wire Line
+	10700 3000 10300 3000
+Wire Wire Line
+	10300 3000 10300 2900
+Wire Wire Line
+	10400 3100 10300 3100
+Wire Wire Line
+	10300 3100 10300 3000
+Connection ~ 10300 2900
+Connection ~ 10300 3000
+Text GLabel 11000 2900 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	10900 2400 10900 2300
+Text GLabel 10900 2400 0    10   BiDi ~ 0
++5V
+Wire Wire Line
+	4900 1500 5600 1500
+Wire Wire Line
+	5600 1500 5600 1400
+Wire Wire Line
+	4900 1600 5000 1600
+Wire Wire Line
+	5000 1600 5100 1600
+Wire Wire Line
+	5800 1900 5000 1900
+Wire Wire Line
+	5000 1900 5000 1600
+Connection ~ 5000 1600
+Wire Wire Line
+	6200 1400 6200 1600
+Wire Wire Line
+	5900 1400 5900 1600
+Wire Wire Line
+	5900 1600 6200 1600
+Wire Wire Line
+	5500 1600 5900 1600
+Wire Wire Line
+	6200 1600 6400 1600
+Connection ~ 5900 1600
+Connection ~ 6200 1600
+Wire Wire Line
+	6600 1800 6600 1900
+Wire Wire Line
+	6600 1800 7200 1800
+Wire Wire Line
+	6200 1900 6600 1900
+Connection ~ 6600 1800
+Connection ~ 6600 1900
+Text GLabel 7200 1800 2    32   BiDi ~ 0
+XSTOP
+Wire Wire Line
+	4900 3600 5600 3600
+Wire Wire Line
+	5600 3600 5600 3500
+Wire Wire Line
+	4900 3700 5000 3700
+Wire Wire Line
+	5000 3700 5100 3700
+Wire Wire Line
+	5800 4000 5000 4000
+Wire Wire Line
+	5000 4000 5000 3700
+Connection ~ 5000 3700
+Wire Wire Line
+	6200 3500 6200 3700
+Wire Wire Line
+	5900 3500 5900 3700
+Wire Wire Line
+	5900 3700 6200 3700
+Wire Wire Line
+	5500 3700 5900 3700
+Wire Wire Line
+	6200 3700 6400 3700
+Connection ~ 5900 3700
+Connection ~ 6200 3700
+Wire Wire Line
+	4900 5600 5600 5600
+Wire Wire Line
+	5600 5600 5600 5500
+Wire Wire Line
+	4900 5700 5000 5700
+Wire Wire Line
+	5000 5700 5100 5700
+Wire Wire Line
+	5800 6000 5000 6000
+Wire Wire Line
+	5000 6000 5000 5700
+Connection ~ 5000 5700
+Wire Wire Line
+	6200 5500 6200 5700
+Wire Wire Line
+	5900 5500 5900 5700
+Wire Wire Line
+	5900 5700 6200 5700
+Wire Wire Line
+	5500 5700 5900 5700
+Wire Wire Line
+	6200 5700 6400 5700
+Connection ~ 5900 5700
+Connection ~ 6200 5700
+Wire Wire Line
+	6600 3900 6600 4000
+Wire Wire Line
+	6600 3900 7200 3900
+Wire Wire Line
+	6200 4000 6600 4000
+Connection ~ 6600 3900
+Connection ~ 6600 4000
+Text GLabel 7200 3900 2    32   BiDi ~ 0
+YSTOP
+Wire Wire Line
+	6600 5900 6600 6000
+Wire Wire Line
+	6600 5900 7300 5900
+Wire Wire Line
+	6200 6000 6600 6000
+Connection ~ 6600 5900
+Connection ~ 6600 6000
+Text GLabel 7300 5900 2    32   BiDi ~ 0
+ZSTOP
+Wire Wire Line
+	11600 2500 11100 2500
+Text GLabel 11200 2500 2    70   BiDi ~ 0
+DIR_E
+Wire Wire Line
+	11600 1300 11100 1300
+Text GLabel 11200 1300 2    70   BiDi ~ 0
+STEP_E2
+Wire Wire Line
+	11600 1500 11300 1500
+Wire Wire Line
+	11600 1400 11300 1400
+Wire Wire Line
+	11300 1500 11300 1400
+Wire Wire Line
+	11300 1500 10100 1500
+Wire Wire Line
+	10100 1500 9900 1500
+Wire Wire Line
+	10100 1500 10100 1800
+Wire Wire Line
+	10100 1800 9300 1800
+Connection ~ 11300 1500
+Connection ~ 10100 1500
+Text GLabel 9300 1800 0    32   BiDi ~ 0
+RXE2
+Wire Wire Line
+	11600 1600 11400 1600
+Wire Wire Line
+	11100 1700 11600 1700
+Wire Wire Line
+	11600 1800 11100 1800
+Wire Wire Line
+	11100 1800 10800 1800
+Wire Wire Line
+	10400 2000 11100 2000
+Wire Wire Line
+	11100 2000 11100 1800
+Connection ~ 11100 1800
+Wire Wire Line
+	11600 4200 11400 4200
+Wire Wire Line
+	11100 4300 11600 4300
+Wire Wire Line
+	11600 4400 11100 4400
+Wire Wire Line
+	11100 4400 10800 4400
+Wire Wire Line
+	10400 4600 11100 4600
+Wire Wire Line
+	11100 4600 11100 4400
+Connection ~ 11100 4400
+Wire Wire Line
+	11600 5400 11300 5400
+Wire Wire Line
+	11600 5300 11300 5300
+Wire Wire Line
+	11300 5400 11300 5300
+Wire Wire Line
+	11300 5400 10100 5400
+Wire Wire Line
+	10100 5400 9900 5400
+Wire Wire Line
+	10100 5400 10100 5700
+Wire Wire Line
+	10100 5700 9300 5700
+Connection ~ 11300 5400
+Connection ~ 10100 5400
+Text GLabel 9300 5700 0    32   BiDi ~ 0
+RXZ
+Wire Wire Line
+	11600 5500 11400 5500
+Wire Wire Line
+	11100 5600 11600 5600
+Wire Wire Line
+	11600 5700 11100 5700
+Wire Wire Line
+	11100 5700 10800 5700
+Wire Wire Line
+	10400 5900 11100 5900
+Wire Wire Line
+	11100 5900 11100 5700
+Connection ~ 11100 5700
+Wire Wire Line
+	11600 6700 11300 6700
+Wire Wire Line
+	11600 6600 11300 6600
+Wire Wire Line
+	11300 6700 11300 6600
+Wire Wire Line
+	9900 6700 10100 6700
+Wire Wire Line
+	10100 6700 11300 6700
+Wire Wire Line
+	10100 6700 10100 7000
+Wire Wire Line
+	10100 7000 9300 7000
+Connection ~ 11300 6700
+Connection ~ 10100 6700
+Text GLabel 9300 7000 0    32   BiDi ~ 0
+RXY
+Wire Wire Line
+	11600 6800 11400 6800
+Wire Wire Line
+	11100 6900 11600 6900
+Wire Wire Line
+	11600 7000 11100 7000
+Wire Wire Line
+	11100 7000 10800 7000
+Wire Wire Line
+	10400 7200 11100 7200
+Wire Wire Line
+	11100 7200 11100 7000
+Connection ~ 11100 7000
+Wire Wire Line
+	11600 8000 11300 8000
+Wire Wire Line
+	11600 7900 11300 7900
+Wire Wire Line
+	11300 8000 11300 7900
+Wire Wire Line
+	11300 8000 10100 8000
+Wire Wire Line
+	10100 8000 9900 8000
+Wire Wire Line
+	10100 8000 10100 8300
+Wire Wire Line
+	10100 8300 9300 8300
+Connection ~ 11300 8000
+Connection ~ 10100 8000
+Text GLabel 9300 8300 0    32   BiDi ~ 0
+RXX
+Wire Wire Line
+	11600 8100 11400 8100
+Wire Wire Line
+	11100 8200 11600 8200
+Wire Wire Line
+	11600 8300 11100 8300
+Wire Wire Line
+	11100 8300 10800 8300
+Wire Wire Line
+	10400 8500 11100 8500
+Wire Wire Line
+	11100 8500 11100 8300
+Connection ~ 11100 8300
+Wire Wire Line
+	11600 7700 11100 7700
+Text GLabel 11200 7700 2    70   BiDi ~ 0
+DIR_X
+Wire Wire Line
+	11600 7800 11100 7800
+Text GLabel 11200 7800 2    70   BiDi ~ 0
+STEP_X
+Wire Wire Line
+	11600 7100 10900 7100
+Wire Wire Line
+	10900 6700 10900 7100
+Wire Wire Line
+	10900 7100 10300 7100
+Text GLabel 11200 7100 2    70   BiDi ~ 0
+EN_Y
+Connection ~ 10900 7100
+Wire Wire Line
+	11600 6400 11100 6400
+Text GLabel 11200 6400 2    70   BiDi ~ 0
+DIR_Y
+Wire Wire Line
+	11600 3900 11100 3900
+Text GLabel 11200 3900 2    70   BiDi ~ 0
+STEP_E1
+Wire Wire Line
+	11600 3200 10900 3200
+Wire Wire Line
+	10900 2800 10900 3200
+Wire Wire Line
+	10900 3200 10300 3200
+Text GLabel 11200 3200 2    70   BiDi ~ 0
+EN_E
+Connection ~ 10900 3200
+Wire Wire Line
+	1800 1500 2500 1500
+Wire Wire Line
+	2500 1500 2500 1400
+Wire Wire Line
+	1800 1600 1900 1600
+Wire Wire Line
+	1900 1600 2000 1600
+Wire Wire Line
+	1900 1600 1900 1900
+Wire Wire Line
+	1900 1900 2700 1900
+Connection ~ 1900 1600
+Wire Wire Line
+	3100 1400 3100 1600
+Wire Wire Line
+	2800 1400 2800 1600
+Wire Wire Line
+	2800 1600 3100 1600
+Wire Wire Line
+	2400 1600 2800 1600
+Wire Wire Line
+	3100 1600 3300 1600
+Connection ~ 2800 1600
+Connection ~ 3100 1600
+Wire Wire Line
+	1800 3600 2500 3600
+Wire Wire Line
+	2500 3600 2500 3500
+Wire Wire Line
+	1800 3700 1900 3700
+Wire Wire Line
+	1900 3700 2000 3700
+Wire Wire Line
+	1900 3700 1900 4000
+Wire Wire Line
+	1900 4000 2700 4000
+Connection ~ 1900 3700
+Wire Wire Line
+	3100 3500 3100 3700
+Wire Wire Line
+	2800 3500 2800 3700
+Wire Wire Line
+	2800 3700 3100 3700
+Wire Wire Line
+	2400 3700 2800 3700
+Wire Wire Line
+	3100 3700 3300 3700
+Connection ~ 2800 3700
+Connection ~ 3100 3700
+Wire Wire Line
+	1800 5600 2500 5600
+Wire Wire Line
+	2500 5600 2500 5500
+Wire Wire Line
+	1800 5700 1900 5700
+Wire Wire Line
+	1900 5700 2000 5700
+Wire Wire Line
+	2700 6000 1900 6000
+Wire Wire Line
+	1900 6000 1900 5700
+Connection ~ 1900 5700
+Wire Wire Line
+	3100 5500 3100 5700
+Wire Wire Line
+	2800 5500 2800 5700
+Wire Wire Line
+	2800 5700 3100 5700
+Wire Wire Line
+	2400 5700 2800 5700
+Wire Wire Line
+	3100 5700 3300 5700
+Connection ~ 2800 5700
+Connection ~ 3100 5700
+Wire Wire Line
+	3500 1800 3500 1900
+Wire Wire Line
+	3500 1800 3800 1800
+Wire Wire Line
+	3100 1900 3500 1900
+Connection ~ 3500 1800
+Connection ~ 3500 1900
+Text GLabel 3800 1800 2    32   BiDi ~ 0
+XSTOP1
+Wire Wire Line
+	3500 3900 3500 4000
+Wire Wire Line
+	3500 3900 3800 3900
+Wire Wire Line
+	3100 4000 3500 4000
+Connection ~ 3500 3900
+Connection ~ 3500 4000
+Text GLabel 3800 3900 2    32   BiDi ~ 0
+YSTOP1
+Wire Wire Line
+	3500 5900 3500 6000
+Wire Wire Line
+	3500 5900 3800 5900
+Wire Wire Line
+	3100 6000 3500 6000
+Connection ~ 3500 5900
+Connection ~ 3500 6000
+Text GLabel 3800 5900 2    32   BiDi ~ 0
+ZSTOP1
+Wire Wire Line
+	11600 2800 11300 2800
+Wire Wire Line
+	11600 2700 11300 2700
+Wire Wire Line
+	11300 2800 11300 2700
+Wire Wire Line
+	11300 2800 10100 2800
+Wire Wire Line
+	10100 2800 9900 2800
+Wire Wire Line
+	10100 2800 10100 3100
+Wire Wire Line
+	10100 3100 9300 3100
+Connection ~ 11300 2800
+Connection ~ 10100 2800
+Text GLabel 9300 3100 0    32   BiDi ~ 0
+RXE
+Wire Wire Line
+	11600 2900 11400 2900
+Wire Wire Line
+	11100 3000 11600 3000
+Wire Wire Line
+	11600 3100 11100 3100
+Wire Wire Line
+	11100 3100 10800 3100
+Wire Wire Line
+	10400 3300 11100 3300
+Wire Wire Line
+	11100 3300 11100 3100
+Connection ~ 11100 3100
+Wire Wire Line
+	13200 3000 12800 3000
+Wire Wire Line
+	13200 3000 13400 3000
+Connection ~ 13200 3000
+Wire Wire Line
+	13200 2900 12800 2900
+Wire Wire Line
+	13200 2900 13400 2900
+Connection ~ 13200 2900
+Wire Wire Line
+	13200 2800 12800 2800
+Wire Wire Line
+	13200 2800 13400 2800
+Connection ~ 13200 2800
+Wire Wire Line
+	13200 2700 12800 2700
+Wire Wire Line
+	13200 2700 13400 2700
+Connection ~ 13200 2700
+Wire Wire Line
+	13200 8200 12800 8200
+Wire Wire Line
+	13200 8200 13400 8200
+Connection ~ 13200 8200
+Wire Wire Line
+	13200 8100 12800 8100
+Wire Wire Line
+	13200 8100 13400 8100
+Connection ~ 13200 8100
+Wire Wire Line
+	13200 8000 12800 8000
+Wire Wire Line
+	13200 8000 13400 8000
+Connection ~ 13200 8000
+Wire Wire Line
+	13200 7900 12800 7900
+Wire Wire Line
+	13200 7900 13400 7900
+Connection ~ 13200 7900
+Wire Wire Line
+	13200 6900 12800 6900
+Wire Wire Line
+	13200 6900 13400 6900
+Connection ~ 13200 6900
+Wire Wire Line
+	13200 6800 12800 6800
+Wire Wire Line
+	13200 6800 13400 6800
+Connection ~ 13200 6800
+Wire Wire Line
+	13200 6700 12800 6700
+Wire Wire Line
+	13200 6700 13400 6700
+Connection ~ 13200 6700
+Wire Wire Line
+	13200 6600 12800 6600
+Wire Wire Line
+	13200 6600 13400 6600
+Connection ~ 13200 6600
+Wire Wire Line
+	13200 5600 12800 5600
+Wire Wire Line
+	13200 5600 13400 5600
+Connection ~ 13200 5600
+Wire Wire Line
+	13200 5500 12800 5500
+Wire Wire Line
+	13200 5500 13400 5500
+Connection ~ 13200 5500
+Wire Wire Line
+	13200 5400 12800 5400
+Wire Wire Line
+	13200 5400 13400 5400
+Connection ~ 13200 5400
+Wire Wire Line
+	13200 5300 12800 5300
+Wire Wire Line
+	13200 5300 13400 5300
+Connection ~ 13200 5300
+Wire Wire Line
+	13200 4300 12800 4300
+Wire Wire Line
+	13200 4300 13400 4300
+Connection ~ 13200 4300
+Wire Wire Line
+	13200 4200 12800 4200
+Wire Wire Line
+	13200 4200 13400 4200
+Connection ~ 13200 4200
+Wire Wire Line
+	13200 4100 12800 4100
+Wire Wire Line
+	13200 4100 13400 4100
+Connection ~ 13200 4100
+Wire Wire Line
+	13200 4000 12800 4000
+Wire Wire Line
+	13200 4000 13400 4000
+Connection ~ 13200 4000
+Wire Wire Line
+	13200 1700 12800 1700
+Wire Wire Line
+	13200 1700 13400 1700
+Connection ~ 13200 1700
+Wire Wire Line
+	13200 1600 12800 1600
+Wire Wire Line
+	13200 1600 13400 1600
+Connection ~ 13200 1600
+Wire Wire Line
+	13200 1500 12800 1500
+Wire Wire Line
+	13200 1500 13400 1500
+Connection ~ 13200 1500
+Wire Wire Line
+	13200 1400 12800 1400
+Wire Wire Line
+	13200 1400 13400 1400
+Connection ~ 13200 1400
+Wire Wire Line
+	11600 1200 11100 1200
+Text GLabel 11200 1200 2    70   BiDi ~ 0
+DIR_E2
+Wire Wire Line
+	11600 1900 10900 1900
+Wire Wire Line
+	10900 1500 10900 1900
+Wire Wire Line
+	10900 1900 10300 1900
+Text GLabel 11200 1900 2    70   BiDi ~ 0
+EN_E2
+Connection ~ 10900 1900
+Wire Wire Line
+	11600 3800 11100 3800
+Text GLabel 11200 3800 2    70   BiDi ~ 0
+DIR_E1
+Wire Wire Line
+	11600 4500 10900 4500
+Wire Wire Line
+	10900 4100 10900 4500
+Wire Wire Line
+	10900 4500 10200 4500
+Text GLabel 11200 4500 2    70   BiDi ~ 0
+EN_E1
+Connection ~ 10900 4500
+Wire Wire Line
+	11600 5100 11100 5100
+Text GLabel 11200 5100 2    70   BiDi ~ 0
+DIR_Z
+Wire Wire Line
+	11600 5200 11100 5200
+Text GLabel 11200 5200 2    70   BiDi ~ 0
+STEP_Z
+Wire Wire Line
+	11600 5800 10900 5800
+Wire Wire Line
+	10900 5400 10900 5800
+Wire Wire Line
+	10900 5800 10300 5800
+Text GLabel 11200 5800 2    70   BiDi ~ 0
+EN_Z
+Connection ~ 10900 5800
+Wire Wire Line
+	11600 6500 11100 6500
+Text GLabel 11200 6500 2    70   BiDi ~ 0
+STEP_Y
+Wire Wire Line
+	11600 8400 10900 8400
+Wire Wire Line
+	10900 8000 10900 8400
+Wire Wire Line
+	10900 8400 10300 8400
+Text GLabel 11200 8400 2    70   BiDi ~ 0
+EN_X
+Connection ~ 10900 8400
+Wire Wire Line
+	11600 2600 11100 2600
+Text GLabel 11200 2600 2    70   BiDi ~ 0
+STEP_E
+Wire Wire Line
+	9500 1500 9300 1500
+Text GLabel 9300 1500 0    32   BiDi ~ 0
+TXE2
+Wire Wire Line
+	9500 2800 9300 2800
+Text GLabel 9300 2800 0    32   BiDi ~ 0
+TXE
+Wire Wire Line
+	9500 4100 9300 4100
+Text GLabel 9300 4100 0    32   BiDi ~ 0
+TXE1
+Wire Wire Line
+	9500 5400 9300 5400
+Text GLabel 9300 5400 0    32   BiDi ~ 0
+TXZ
+Wire Wire Line
+	9500 8000 9300 8000
+Text GLabel 9300 8000 0    32   BiDi ~ 0
+TXX
+Wire Wire Line
+	9500 6700 9300 6700
+Text GLabel 9300 6700 0    32   BiDi ~ 0
+TXY
+Wire Wire Line
+	11600 4100 11300 4100
+Wire Wire Line
+	11600 4000 11300 4000
+Wire Wire Line
+	11300 4100 11300 4000
+Wire Wire Line
+	11300 4100 10100 4100
+Wire Wire Line
+	10100 4100 9900 4100
+Wire Wire Line
+	10100 4100 10100 4400
+Wire Wire Line
+	10100 4400 9300 4400
+Connection ~ 11300 4100
+Connection ~ 10100 4100
+Text GLabel 9300 4400 0    32   BiDi ~ 0
+RXE1
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 XSTOP
+U 1 0 C7CCA50A
+P 4800 1600
+AR Path="/C7CCA50A" Ref="XSTOP"  Part="1" 
+AR Path="/5BBB45F5/C7CCA50A" Ref="XSTOP2"  Part="1" 
+F 0 "XSTOP2" H 5000 1600 59  0000 L BNN
+F 1 "MTA03-100" H 5000 1450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 4800 1600 50  0001 C CNN
+F 3 "" H 4800 1600 50  0001 C CNN
+	1    4800 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R17
+U 1 0 2E08AF73
+P 5300 1600
+AR Path="/2E08AF73" Ref="R17"  Part="1" 
+AR Path="/5BBB45F5/2E08AF73" Ref="R17"  Part="1" 
+F 0 "R17" H 5150 1659 59  0000 L BNN
+F 1 "1k" H 5150 1470 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5300 1600 50  0001 C CNN
+F 3 "" H 5300 1600 50  0001 C CNN
+	1    5300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R18
+U 1 0 305E41DE
+P 5600 1200
+AR Path="/305E41DE" Ref="R18"  Part="1" 
+AR Path="/5BBB45F5/305E41DE" Ref="R18"  Part="1" 
+F 0 "R18" H 5450 1259 59  0000 L BNN
+F 1 "0" H 5450 1070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5600 1200 50  0001 C CNN
+F 3 "" H 5600 1200 50  0001 C CNN
+	1    5600 1200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C9
+U 1 0 501DA122
+P 5900 1300
+AR Path="/501DA122" Ref="C9"  Part="1" 
+AR Path="/5BBB45F5/501DA122" Ref="C9"  Part="1" 
+F 0 "C9" H 5960 1315 59  0000 L BNN
+F 1 "100nF" H 5960 1115 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 5900 1300 50  0001 C CNN
+F 3 "" H 5900 1300 50  0001 C CNN
+	1    5900 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+8
+U 1 0 E32DC4A8
+P 5900 800
+AR Path="/E32DC4A8" Ref="#P+8"  Part="1" 
+AR Path="/5BBB45F5/E32DC4A8" Ref="#P+08"  Part="1" 
+F 0 "#P+08" H 5900 800 50  0001 C CNN
+F 1 "+5V" V 5800 600 59  0000 L BNN
+F 2 "" H 5900 800 50  0001 C CNN
+F 3 "" H 5900 800 50  0001 C CNN
+	1    5900 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R19
+U 1 0 F6755933
+P 6200 1200
+AR Path="/F6755933" Ref="R19"  Part="1" 
+AR Path="/5BBB45F5/F6755933" Ref="R19"  Part="1" 
+F 0 "R19" H 6050 1259 59  0000 L BNN
+F 1 "1k" H 6050 1070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6200 1200 50  0001 C CNN
+F 3 "" H 6200 1200 50  0001 C CNN
+	1    6200 1200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+9
+U 1 0 DD8F0AB4
+P 5600 800
+AR Path="/DD8F0AB4" Ref="#P+9"  Part="1" 
+AR Path="/5BBB45F5/DD8F0AB4" Ref="#P+09"  Part="1" 
+F 0 "#P+09" H 5600 800 50  0001 C CNN
+F 1 "+12V" V 5500 600 59  0000 L BNN
+F 2 "" H 5600 800 50  0001 C CNN
+F 3 "" H 5600 800 50  0001 C CNN
+	1    5600 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$19
+U 1 0 1DEA58DA
+P 5600 2500
+AR Path="/1DEA58DA" Ref="#U$19"  Part="1" 
+AR Path="/5BBB45F5/1DEA58DA" Ref="#U$019"  Part="1" 
+F 0 "#U$019" H 5600 2500 50  0001 C CNN
+F 1 "GND" H 5500 2400 59  0000 L BNN
+F 2 "" H 5600 2500 50  0001 C CNN
+F 3 "" H 5600 2500 50  0001 C CNN
+	1    5600 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R20
+U 1 0 61DA09E4
+P 6600 2100
+AR Path="/61DA09E4" Ref="R20"  Part="1" 
+AR Path="/5BBB45F5/61DA09E4" Ref="R20"  Part="1" 
+F 0 "R20" H 6450 2159 59  0000 L BNN
+F 1 "R-EU_R0603" H 6450 1970 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6600 2100 50  0001 C CNN
+F 3 "" H 6600 2100 50  0001 C CNN
+	1    6600 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T1
+U 1 0 B8952976
+P 6500 1600
+AR Path="/B8952976" Ref="T1"  Part="1" 
+AR Path="/5BBB45F5/B8952976" Ref="T1"  Part="1" 
+F 0 "T1" H 6100 1900 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 6100 1800 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 6500 1600 50  0001 C CNN
+F 3 "" H 6500 1600 50  0001 C CNN
+	1    6500 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$20
+U 1 0 A9A82E2E
+P 6600 2500
+AR Path="/A9A82E2E" Ref="#U$20"  Part="1" 
+AR Path="/5BBB45F5/A9A82E2E" Ref="#U$020"  Part="1" 
+F 0 "#U$020" H 6600 2500 50  0001 C CNN
+F 1 "GND" H 6500 2400 59  0000 L BNN
+F 2 "" H 6600 2500 50  0001 C CNN
+F 3 "" H 6600 2500 50  0001 C CNN
+	1    6600 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 YSTOP
+U 1 0 904FE5FA
+P 4800 3700
+AR Path="/904FE5FA" Ref="YSTOP"  Part="1" 
+AR Path="/5BBB45F5/904FE5FA" Ref="YSTOP2"  Part="1" 
+F 0 "YSTOP2" H 5000 3700 59  0000 L BNN
+F 1 "MTA03-100" H 5000 3550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 4800 3700 50  0001 C CNN
+F 3 "" H 4800 3700 50  0001 C CNN
+	1    4800 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R21
+U 1 0 8FE8240F
+P 5300 3700
+AR Path="/8FE8240F" Ref="R21"  Part="1" 
+AR Path="/5BBB45F5/8FE8240F" Ref="R21"  Part="1" 
+F 0 "R21" H 5150 3759 59  0000 L BNN
+F 1 "1k" H 5150 3570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5300 3700 50  0001 C CNN
+F 3 "" H 5300 3700 50  0001 C CNN
+	1    5300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R22
+U 1 0 AA27AAF1
+P 5600 3300
+AR Path="/AA27AAF1" Ref="R22"  Part="1" 
+AR Path="/5BBB45F5/AA27AAF1" Ref="R22"  Part="1" 
+F 0 "R22" H 5450 3359 59  0000 L BNN
+F 1 "0" H 5450 3170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5600 3300 50  0001 C CNN
+F 3 "" H 5600 3300 50  0001 C CNN
+	1    5600 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C10
+U 1 0 CB1F8FE5
+P 5900 3400
+AR Path="/CB1F8FE5" Ref="C10"  Part="1" 
+AR Path="/5BBB45F5/CB1F8FE5" Ref="C10"  Part="1" 
+F 0 "C10" H 5960 3415 59  0000 L BNN
+F 1 "100nF" H 5960 3215 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 5900 3400 50  0001 C CNN
+F 3 "" H 5900 3400 50  0001 C CNN
+	1    5900 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+10
+U 1 0 6665561A
+P 5900 2900
+AR Path="/6665561A" Ref="#P+10"  Part="1" 
+AR Path="/5BBB45F5/6665561A" Ref="#P+010"  Part="1" 
+F 0 "#P+010" H 5900 2900 50  0001 C CNN
+F 1 "+5V" V 5800 2700 59  0000 L BNN
+F 2 "" H 5900 2900 50  0001 C CNN
+F 3 "" H 5900 2900 50  0001 C CNN
+	1    5900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R23
+U 1 0 DB0DC8AE
+P 6200 3300
+AR Path="/DB0DC8AE" Ref="R23"  Part="1" 
+AR Path="/5BBB45F5/DB0DC8AE" Ref="R23"  Part="1" 
+F 0 "R23" H 6050 3359 59  0000 L BNN
+F 1 "1k" H 6050 3170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6200 3300 50  0001 C CNN
+F 3 "" H 6200 3300 50  0001 C CNN
+	1    6200 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+11
+U 1 0 4D46F757
+P 5600 2900
+AR Path="/4D46F757" Ref="#P+11"  Part="1" 
+AR Path="/5BBB45F5/4D46F757" Ref="#P+011"  Part="1" 
+F 0 "#P+011" H 5600 2900 50  0001 C CNN
+F 1 "+12V" V 5500 2700 59  0000 L BNN
+F 2 "" H 5600 2900 50  0001 C CNN
+F 3 "" H 5600 2900 50  0001 C CNN
+	1    5600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$21
+U 1 0 CA2824D4
+P 5600 4600
+AR Path="/CA2824D4" Ref="#U$21"  Part="1" 
+AR Path="/5BBB45F5/CA2824D4" Ref="#U$021"  Part="1" 
+F 0 "#U$021" H 5600 4600 50  0001 C CNN
+F 1 "GND" H 5500 4500 59  0000 L BNN
+F 2 "" H 5600 4600 50  0001 C CNN
+F 3 "" H 5600 4600 50  0001 C CNN
+	1    5600 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R24
+U 1 0 7AA300D2
+P 6600 4200
+AR Path="/7AA300D2" Ref="R24"  Part="1" 
+AR Path="/5BBB45F5/7AA300D2" Ref="R24"  Part="1" 
+F 0 "R24" H 6450 4259 59  0000 L BNN
+F 1 "R-EU_R0603" H 6450 4070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6600 4200 50  0001 C CNN
+F 3 "" H 6600 4200 50  0001 C CNN
+	1    6600 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T2
+U 1 0 31888E91
+P 6500 3700
+AR Path="/31888E91" Ref="T2"  Part="1" 
+AR Path="/5BBB45F5/31888E91" Ref="T2"  Part="1" 
+F 0 "T2" H 6100 4000 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 6100 3900 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 6500 3700 50  0001 C CNN
+F 3 "" H 6500 3700 50  0001 C CNN
+	1    6500 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$22
+U 1 0 585CEF8C
+P 6600 4600
+AR Path="/585CEF8C" Ref="#U$22"  Part="1" 
+AR Path="/5BBB45F5/585CEF8C" Ref="#U$022"  Part="1" 
+F 0 "#U$022" H 6600 4600 50  0001 C CNN
+F 1 "GND" H 6500 4500 59  0000 L BNN
+F 2 "" H 6600 4600 50  0001 C CNN
+F 3 "" H 6600 4600 50  0001 C CNN
+	1    6600 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 ZSTOP
+U 1 0 F47216A4
+P 4800 5700
+AR Path="/F47216A4" Ref="ZSTOP"  Part="1" 
+AR Path="/5BBB45F5/F47216A4" Ref="ZSTOP2"  Part="1" 
+F 0 "ZSTOP2" H 5000 5700 59  0000 L BNN
+F 1 "MTA03-100" H 5000 5550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 4800 5700 50  0001 C CNN
+F 3 "" H 4800 5700 50  0001 C CNN
+	1    4800 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R25
+U 1 0 4819006A
+P 5300 5700
+AR Path="/4819006A" Ref="R25"  Part="1" 
+AR Path="/5BBB45F5/4819006A" Ref="R25"  Part="1" 
+F 0 "R25" H 5150 5759 59  0000 L BNN
+F 1 "1k" H 5150 5570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5300 5700 50  0001 C CNN
+F 3 "" H 5300 5700 50  0001 C CNN
+	1    5300 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R26
+U 1 0 55C6A37C
+P 5600 5300
+AR Path="/55C6A37C" Ref="R26"  Part="1" 
+AR Path="/5BBB45F5/55C6A37C" Ref="R26"  Part="1" 
+F 0 "R26" H 5450 5359 59  0000 L BNN
+F 1 "0" H 5450 5170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 5600 5300 50  0001 C CNN
+F 3 "" H 5600 5300 50  0001 C CNN
+	1    5600 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C11
+U 1 0 F1735AC7
+P 5900 5400
+AR Path="/F1735AC7" Ref="C11"  Part="1" 
+AR Path="/5BBB45F5/F1735AC7" Ref="C11"  Part="1" 
+F 0 "C11" H 5960 5415 59  0000 L BNN
+F 1 "100nF" H 5960 5215 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 5900 5400 50  0001 C CNN
+F 3 "" H 5900 5400 50  0001 C CNN
+	1    5900 5400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+12
+U 1 0 BC83E68F
+P 5900 4900
+AR Path="/BC83E68F" Ref="#P+12"  Part="1" 
+AR Path="/5BBB45F5/BC83E68F" Ref="#P+012"  Part="1" 
+F 0 "#P+012" H 5900 4900 50  0001 C CNN
+F 1 "+5V" V 5800 4700 59  0000 L BNN
+F 2 "" H 5900 4900 50  0001 C CNN
+F 3 "" H 5900 4900 50  0001 C CNN
+	1    5900 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R27
+U 1 0 D6BBAF81
+P 6200 5300
+AR Path="/D6BBAF81" Ref="R27"  Part="1" 
+AR Path="/5BBB45F5/D6BBAF81" Ref="R27"  Part="1" 
+F 0 "R27" H 6050 5359 59  0000 L BNN
+F 1 "1k" H 6050 5170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6200 5300 50  0001 C CNN
+F 3 "" H 6200 5300 50  0001 C CNN
+	1    6200 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+13
+U 1 0 1A067FB7
+P 5600 4900
+AR Path="/1A067FB7" Ref="#P+13"  Part="1" 
+AR Path="/5BBB45F5/1A067FB7" Ref="#P+013"  Part="1" 
+F 0 "#P+013" H 5600 4900 50  0001 C CNN
+F 1 "+12V" V 5500 4700 59  0000 L BNN
+F 2 "" H 5600 4900 50  0001 C CNN
+F 3 "" H 5600 4900 50  0001 C CNN
+	1    5600 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$23
+U 1 0 3E99C09D
+P 5600 6600
+AR Path="/3E99C09D" Ref="#U$23"  Part="1" 
+AR Path="/5BBB45F5/3E99C09D" Ref="#U$023"  Part="1" 
+F 0 "#U$023" H 5600 6600 50  0001 C CNN
+F 1 "GND" H 5500 6500 59  0000 L BNN
+F 2 "" H 5600 6600 50  0001 C CNN
+F 3 "" H 5600 6600 50  0001 C CNN
+	1    5600 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R28
+U 1 0 A39A2B98
+P 6600 6200
+AR Path="/A39A2B98" Ref="R28"  Part="1" 
+AR Path="/5BBB45F5/A39A2B98" Ref="R28"  Part="1" 
+F 0 "R28" H 6450 6259 59  0000 L BNN
+F 1 "R-EU_R0603" H 6450 6070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6600 6200 50  0001 C CNN
+F 3 "" H 6600 6200 50  0001 C CNN
+	1    6600 6200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T3
+U 1 0 C1530958
+P 6500 5700
+AR Path="/C1530958" Ref="T3"  Part="1" 
+AR Path="/5BBB45F5/C1530958" Ref="T3"  Part="1" 
+F 0 "T3" H 6100 6000 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 6100 5900 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 6500 5700 50  0001 C CNN
+F 3 "" H 6500 5700 50  0001 C CNN
+	1    6500 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$24
+U 1 0 5D73C6FF
+P 6600 6600
+AR Path="/5D73C6FF" Ref="#U$24"  Part="1" 
+AR Path="/5BBB45F5/5D73C6FF" Ref="#U$024"  Part="1" 
+F 0 "#U$024" H 6600 6600 50  0001 C CNN
+F 1 "GND" H 6500 6500 59  0000 L BNN
+F 2 "" H 6600 6600 50  0001 C CNN
+F 3 "" H 6600 6600 50  0001 C CNN
+	1    6600 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$33
+U 1 0 6953EFA5
+P 13100 2200
+AR Path="/6953EFA5" Ref="#U$33"  Part="1" 
+AR Path="/5BBB45F5/6953EFA5" Ref="#U$033"  Part="1" 
+F 0 "#U$033" H 13100 2200 50  0001 C CNN
+F 1 "GND" H 13000 2100 59  0000 L BNN
+F 2 "" H 13100 2200 50  0001 C CNN
+F 3 "" H 13100 2200 50  0001 C CNN
+	1    13100 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP4
+U 1 0 193933AB
+P 11200 1600
+AR Path="/193933AB" Ref="JP4"  Part="1" 
+AR Path="/5BBB45F5/193933AB" Ref="JP4"  Part="1" 
+F 0 "JP4" H 11100 1700 59  0000 L BNN
+F 1 "SJ" H 11100 1450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 1600 50  0001 C CNN
+F 3 "" H 11200 1600 50  0001 C CNN
+	1    11200 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP5
+U 1 0 056852D9
+P 10900 1700
+AR Path="/056852D9" Ref="JP5"  Part="1" 
+AR Path="/5BBB45F5/056852D9" Ref="JP5"  Part="1" 
+F 0 "JP5" H 10800 1800 59  0000 L BNN
+F 1 "SJ" H 10800 1550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 1700 50  0001 C CNN
+F 3 "" H 10900 1700 50  0001 C CNN
+	1    10900 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP6
+U 1 0 A21E5090
+P 10600 1800
+AR Path="/A21E5090" Ref="JP6"  Part="1" 
+AR Path="/5BBB45F5/A21E5090" Ref="JP6"  Part="1" 
+F 0 "JP6" H 10500 1900 59  0000 L BNN
+F 1 "SJ" H 10500 1650 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 1800 50  0001 C CNN
+F 3 "" H 10600 1800 50  0001 C CNN
+	1    10600 1800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDER2M
+U 1 0 F46E4219
+P 13300 1600
+AR Path="/F46E4219" Ref="EXTRUDER2M"  Part="1" 
+AR Path="/5BBB45F5/F46E4219" Ref="EXTRUDER2M2"  Part="1" 
+F 0 "EXTRUDER2M2" H 13600 1600 59  0000 L BNN
+F 1 "MTA04-100" H 13600 1450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 1600 50  0001 C CNN
+F 3 "" H 13300 1600 50  0001 C CNN
+	1    13300 1600
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+20
+U 1 0 9D43D020
+P 13200 1000
+AR Path="/9D43D020" Ref="#P+20"  Part="1" 
+AR Path="/5BBB45F5/9D43D020" Ref="#P+020"  Part="1" 
+F 0 "#P+020" H 13200 1000 50  0001 C CNN
+F 1 "+5V" V 13100 800 59  0000 L BNN
+F 2 "" H 13200 1000 50  0001 C CNN
+F 3 "" H 13200 1000 50  0001 C CNN
+	1    13200 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+19
+U 1 0 2B0BC8EA
+P 13700 1000
+AR Path="/2B0BC8EA" Ref="#P+19"  Part="1" 
+AR Path="/5BBB45F5/2B0BC8EA" Ref="#P+019"  Part="1" 
+F 0 "#P+019" H 13700 1000 50  0001 C CNN
+F 1 "+12V" V 13600 800 59  0000 L BNN
+F 2 "" H 13700 1000 50  0001 C CNN
+F 3 "" H 13700 1000 50  0001 C CNN
+	1    13700 1000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+21
+U 1 0 091B6EC0
+P 10300 1200
+AR Path="/091B6EC0" Ref="#P+21"  Part="1" 
+AR Path="/5BBB45F5/091B6EC0" Ref="#P+021"  Part="1" 
+F 0 "#P+021" H 10300 1200 50  0001 C CNN
+F 1 "+5V" V 10200 1000 59  0000 L BNN
+F 2 "" H 10300 1200 50  0001 C CNN
+F 3 "" H 10300 1200 50  0001 C CNN
+	1    10300 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$34
+U 1 0 1AF98053
+P 13100 4800
+AR Path="/1AF98053" Ref="#U$34"  Part="1" 
+AR Path="/5BBB45F5/1AF98053" Ref="#U$034"  Part="1" 
+F 0 "#U$034" H 13100 4800 50  0001 C CNN
+F 1 "GND" H 13000 4700 59  0000 L BNN
+F 2 "" H 13100 4800 50  0001 C CNN
+F 3 "" H 13100 4800 50  0001 C CNN
+	1    13100 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP9
+U 1 0 C8B46213
+P 11200 4200
+AR Path="/C8B46213" Ref="JP9"  Part="1" 
+AR Path="/5BBB45F5/C8B46213" Ref="JP9"  Part="1" 
+F 0 "JP9" H 11100 4300 59  0000 L BNN
+F 1 "SJ" H 11100 4050 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 4200 50  0001 C CNN
+F 3 "" H 11200 4200 50  0001 C CNN
+	1    11200 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP10
+U 1 0 A1D90C10
+P 10900 4300
+AR Path="/A1D90C10" Ref="JP10"  Part="1" 
+AR Path="/5BBB45F5/A1D90C10" Ref="JP10"  Part="1" 
+F 0 "JP10" H 10800 4400 59  0000 L BNN
+F 1 "SJ" H 10800 4150 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 4300 50  0001 C CNN
+F 3 "" H 10900 4300 50  0001 C CNN
+	1    10900 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP11
+U 1 0 E9E46F75
+P 10600 4400
+AR Path="/E9E46F75" Ref="JP11"  Part="1" 
+AR Path="/5BBB45F5/E9E46F75" Ref="JP11"  Part="1" 
+F 0 "JP11" H 10500 4500 59  0000 L BNN
+F 1 "SJ" H 10500 4250 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 4400 50  0001 C CNN
+F 3 "" H 10600 4400 50  0001 C CNN
+	1    10600 4400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDER1M
+U 1 0 ACCDD4A0
+P 13300 4200
+AR Path="/ACCDD4A0" Ref="EXTRUDER1M"  Part="1" 
+AR Path="/5BBB45F5/ACCDD4A0" Ref="EXTRUDER1M2"  Part="1" 
+F 0 "EXTRUDER1M2" H 13600 4200 59  0000 L BNN
+F 1 "MTA04-100" H 13600 4050 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 4200 50  0001 C CNN
+F 3 "" H 13300 4200 50  0001 C CNN
+	1    13300 4200
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+22
+U 1 0 2342D0ED
+P 13200 3600
+AR Path="/2342D0ED" Ref="#P+22"  Part="1" 
+AR Path="/5BBB45F5/2342D0ED" Ref="#P+022"  Part="1" 
+F 0 "#P+022" H 13200 3600 50  0001 C CNN
+F 1 "+5V" V 13100 3400 59  0000 L BNN
+F 2 "" H 13200 3600 50  0001 C CNN
+F 3 "" H 13200 3600 50  0001 C CNN
+	1    13200 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+23
+U 1 0 F3D13277
+P 13700 3600
+AR Path="/F3D13277" Ref="#P+23"  Part="1" 
+AR Path="/5BBB45F5/F3D13277" Ref="#P+023"  Part="1" 
+F 0 "#P+023" H 13700 3600 50  0001 C CNN
+F 1 "+12V" V 13600 3400 59  0000 L BNN
+F 2 "" H 13700 3600 50  0001 C CNN
+F 3 "" H 13700 3600 50  0001 C CNN
+	1    13700 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+24
+U 1 0 26131AF3
+P 10300 3800
+AR Path="/26131AF3" Ref="#P+24"  Part="1" 
+AR Path="/5BBB45F5/26131AF3" Ref="#P+024"  Part="1" 
+F 0 "#P+024" H 10300 3800 50  0001 C CNN
+F 1 "+5V" V 10200 3600 59  0000 L BNN
+F 2 "" H 10300 3800 50  0001 C CNN
+F 3 "" H 10300 3800 50  0001 C CNN
+	1    10300 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$35
+U 1 0 B9D1E2C2
+P 13100 6100
+AR Path="/B9D1E2C2" Ref="#U$35"  Part="1" 
+AR Path="/5BBB45F5/B9D1E2C2" Ref="#U$035"  Part="1" 
+F 0 "#U$035" H 13100 6100 50  0001 C CNN
+F 1 "GND" H 13000 6000 59  0000 L BNN
+F 2 "" H 13100 6100 50  0001 C CNN
+F 3 "" H 13100 6100 50  0001 C CNN
+	1    13100 6100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP14
+U 1 0 FF5F0BF4
+P 11200 5500
+AR Path="/FF5F0BF4" Ref="JP14"  Part="1" 
+AR Path="/5BBB45F5/FF5F0BF4" Ref="JP14"  Part="1" 
+F 0 "JP14" H 11100 5600 59  0000 L BNN
+F 1 "SJ" H 11100 5350 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 5500 50  0001 C CNN
+F 3 "" H 11200 5500 50  0001 C CNN
+	1    11200 5500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP15
+U 1 0 4861989B
+P 10900 5600
+AR Path="/4861989B" Ref="JP15"  Part="1" 
+AR Path="/5BBB45F5/4861989B" Ref="JP15"  Part="1" 
+F 0 "JP15" H 10800 5700 59  0000 L BNN
+F 1 "SJ" H 10800 5450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 5600 50  0001 C CNN
+F 3 "" H 10900 5600 50  0001 C CNN
+	1    10900 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP16
+U 1 0 5B0B6750
+P 10600 5700
+AR Path="/5B0B6750" Ref="JP16"  Part="1" 
+AR Path="/5BBB45F5/5B0B6750" Ref="JP16"  Part="1" 
+F 0 "JP16" H 10500 5800 59  0000 L BNN
+F 1 "SJ" H 10500 5550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 5700 50  0001 C CNN
+F 3 "" H 10600 5700 50  0001 C CNN
+	1    10600 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 Z-MOTOR
+U 1 0 EA7961A5
+P 13300 5500
+AR Path="/EA7961A5" Ref="Z-MOTOR"  Part="1" 
+AR Path="/5BBB45F5/EA7961A5" Ref="Z-MOTOR2"  Part="1" 
+F 0 "Z-MOTOR2" H 13600 5500 59  0000 L BNN
+F 1 "MTA04-100" H 13600 5350 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 5500 50  0001 C CNN
+F 3 "" H 13300 5500 50  0001 C CNN
+	1    13300 5500
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+25
+U 1 0 F90ABA34
+P 13200 4900
+AR Path="/F90ABA34" Ref="#P+25"  Part="1" 
+AR Path="/5BBB45F5/F90ABA34" Ref="#P+025"  Part="1" 
+F 0 "#P+025" H 13200 4900 50  0001 C CNN
+F 1 "+5V" V 13100 4700 59  0000 L BNN
+F 2 "" H 13200 4900 50  0001 C CNN
+F 3 "" H 13200 4900 50  0001 C CNN
+	1    13200 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+26
+U 1 0 4777B23A
+P 13700 4900
+AR Path="/4777B23A" Ref="#P+26"  Part="1" 
+AR Path="/5BBB45F5/4777B23A" Ref="#P+026"  Part="1" 
+F 0 "#P+026" H 13700 4900 50  0001 C CNN
+F 1 "+12V" V 13600 4700 59  0000 L BNN
+F 2 "" H 13700 4900 50  0001 C CNN
+F 3 "" H 13700 4900 50  0001 C CNN
+	1    13700 4900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+27
+U 1 0 988C0A8B
+P 10300 5100
+AR Path="/988C0A8B" Ref="#P+27"  Part="1" 
+AR Path="/5BBB45F5/988C0A8B" Ref="#P+027"  Part="1" 
+F 0 "#P+027" H 10300 5100 50  0001 C CNN
+F 1 "+5V" V 10200 4900 59  0000 L BNN
+F 2 "" H 10300 5100 50  0001 C CNN
+F 3 "" H 10300 5100 50  0001 C CNN
+	1    10300 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$36
+U 1 0 BA2602F5
+P 13100 7400
+AR Path="/BA2602F5" Ref="#U$36"  Part="1" 
+AR Path="/5BBB45F5/BA2602F5" Ref="#U$036"  Part="1" 
+F 0 "#U$036" H 13100 7400 50  0001 C CNN
+F 1 "GND" H 13000 7300 59  0000 L BNN
+F 2 "" H 13100 7400 50  0001 C CNN
+F 3 "" H 13100 7400 50  0001 C CNN
+	1    13100 7400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP19
+U 1 0 8C09E143
+P 11200 6800
+AR Path="/8C09E143" Ref="JP19"  Part="1" 
+AR Path="/5BBB45F5/8C09E143" Ref="JP19"  Part="1" 
+F 0 "JP19" H 11100 6900 59  0000 L BNN
+F 1 "SJ" H 11100 6650 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 6800 50  0001 C CNN
+F 3 "" H 11200 6800 50  0001 C CNN
+	1    11200 6800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP20
+U 1 0 CCA208B0
+P 10900 6900
+AR Path="/CCA208B0" Ref="JP20"  Part="1" 
+AR Path="/5BBB45F5/CCA208B0" Ref="JP20"  Part="1" 
+F 0 "JP20" H 10800 7000 59  0000 L BNN
+F 1 "SJ" H 10800 6750 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 6900 50  0001 C CNN
+F 3 "" H 10900 6900 50  0001 C CNN
+	1    10900 6900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP21
+U 1 0 A761BF49
+P 10600 7000
+AR Path="/A761BF49" Ref="JP21"  Part="1" 
+AR Path="/5BBB45F5/A761BF49" Ref="JP21"  Part="1" 
+F 0 "JP21" H 10500 7100 59  0000 L BNN
+F 1 "SJ" H 10500 6850 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 7000 50  0001 C CNN
+F 3 "" H 10600 7000 50  0001 C CNN
+	1    10600 7000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 Y-MOTOR
+U 1 0 2C994EF4
+P 13300 6800
+AR Path="/2C994EF4" Ref="Y-MOTOR"  Part="1" 
+AR Path="/5BBB45F5/2C994EF4" Ref="Y-MOTOR2"  Part="1" 
+F 0 "Y-MOTOR2" H 13600 6800 59  0000 L BNN
+F 1 "MTA04-100" H 13600 6650 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 6800 50  0001 C CNN
+F 3 "" H 13300 6800 50  0001 C CNN
+	1    13300 6800
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+28
+U 1 0 5E7F5AFC
+P 13200 6200
+AR Path="/5E7F5AFC" Ref="#P+28"  Part="1" 
+AR Path="/5BBB45F5/5E7F5AFC" Ref="#P+028"  Part="1" 
+F 0 "#P+028" H 13200 6200 50  0001 C CNN
+F 1 "+5V" V 13100 6000 59  0000 L BNN
+F 2 "" H 13200 6200 50  0001 C CNN
+F 3 "" H 13200 6200 50  0001 C CNN
+	1    13200 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+29
+U 1 0 33FD6E47
+P 13700 6200
+AR Path="/33FD6E47" Ref="#P+29"  Part="1" 
+AR Path="/5BBB45F5/33FD6E47" Ref="#P+029"  Part="1" 
+F 0 "#P+029" H 13700 6200 50  0001 C CNN
+F 1 "+12V" V 13600 6000 59  0000 L BNN
+F 2 "" H 13700 6200 50  0001 C CNN
+F 3 "" H 13700 6200 50  0001 C CNN
+	1    13700 6200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+30
+U 1 0 0D5C7D76
+P 10300 6400
+AR Path="/0D5C7D76" Ref="#P+30"  Part="1" 
+AR Path="/5BBB45F5/0D5C7D76" Ref="#P+030"  Part="1" 
+F 0 "#P+030" H 10300 6400 50  0001 C CNN
+F 1 "+5V" V 10200 6200 59  0000 L BNN
+F 2 "" H 10300 6400 50  0001 C CNN
+F 3 "" H 10300 6400 50  0001 C CNN
+	1    10300 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$37
+U 1 0 29820D38
+P 13100 8700
+AR Path="/29820D38" Ref="#U$37"  Part="1" 
+AR Path="/5BBB45F5/29820D38" Ref="#U$037"  Part="1" 
+F 0 "#U$037" H 13100 8700 50  0001 C CNN
+F 1 "GND" H 13000 8600 59  0000 L BNN
+F 2 "" H 13100 8700 50  0001 C CNN
+F 3 "" H 13100 8700 50  0001 C CNN
+	1    13100 8700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP24
+U 1 0 B9D595EE
+P 11200 8100
+AR Path="/B9D595EE" Ref="JP24"  Part="1" 
+AR Path="/5BBB45F5/B9D595EE" Ref="JP24"  Part="1" 
+F 0 "JP24" H 11100 8200 59  0000 L BNN
+F 1 "SJ" H 11100 7950 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 8100 50  0001 C CNN
+F 3 "" H 11200 8100 50  0001 C CNN
+	1    11200 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP25
+U 1 0 55E19E0D
+P 10900 8200
+AR Path="/55E19E0D" Ref="JP25"  Part="1" 
+AR Path="/5BBB45F5/55E19E0D" Ref="JP25"  Part="1" 
+F 0 "JP25" H 10800 8300 59  0000 L BNN
+F 1 "SJ" H 10800 8050 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 8200 50  0001 C CNN
+F 3 "" H 10900 8200 50  0001 C CNN
+	1    10900 8200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP26
+U 1 0 9A366D87
+P 10600 8300
+AR Path="/9A366D87" Ref="JP26"  Part="1" 
+AR Path="/5BBB45F5/9A366D87" Ref="JP26"  Part="1" 
+F 0 "JP26" H 10500 8400 59  0000 L BNN
+F 1 "SJ" H 10500 8150 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 8300 50  0001 C CNN
+F 3 "" H 10600 8300 50  0001 C CNN
+	1    10600 8300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 X-MOTOR
+U 1 0 E7B476E2
+P 13300 8100
+AR Path="/E7B476E2" Ref="X-MOTOR"  Part="1" 
+AR Path="/5BBB45F5/E7B476E2" Ref="X-MOTOR2"  Part="1" 
+F 0 "X-MOTOR2" H 13600 8100 59  0000 L BNN
+F 1 "MTA04-100" H 13600 7950 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 8100 50  0001 C CNN
+F 3 "" H 13300 8100 50  0001 C CNN
+	1    13300 8100
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+31
+U 1 0 0D6E2306
+P 13200 7500
+AR Path="/0D6E2306" Ref="#P+31"  Part="1" 
+AR Path="/5BBB45F5/0D6E2306" Ref="#P+031"  Part="1" 
+F 0 "#P+031" H 13200 7500 50  0001 C CNN
+F 1 "+5V" V 13100 7300 59  0000 L BNN
+F 2 "" H 13200 7500 50  0001 C CNN
+F 3 "" H 13200 7500 50  0001 C CNN
+	1    13200 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+32
+U 1 0 65A29347
+P 13700 7500
+AR Path="/65A29347" Ref="#P+32"  Part="1" 
+AR Path="/5BBB45F5/65A29347" Ref="#P+032"  Part="1" 
+F 0 "#P+032" H 13700 7500 50  0001 C CNN
+F 1 "+12V" V 13600 7300 59  0000 L BNN
+F 2 "" H 13700 7500 50  0001 C CNN
+F 3 "" H 13700 7500 50  0001 C CNN
+	1    13700 7500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+33
+U 1 0 6F61BCF8
+P 10300 7700
+AR Path="/6F61BCF8" Ref="#P+33"  Part="1" 
+AR Path="/5BBB45F5/6F61BCF8" Ref="#P+033"  Part="1" 
+F 0 "#P+033" H 10300 7700 50  0001 C CNN
+F 1 "+5V" V 10200 7500 59  0000 L BNN
+F 2 "" H 10300 7700 50  0001 C CNN
+F 3 "" H 10300 7700 50  0001 C CNN
+	1    10300 7700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R35
+U 1 0 5CCA5766
+P 10900 3900
+AR Path="/5CCA5766" Ref="R35"  Part="1" 
+AR Path="/5BBB45F5/5CCA5766" Ref="R35"  Part="1" 
+F 0 "R35" H 10750 3959 59  0000 L BNN
+F 1 "10k" H 10750 3770 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 3900 50  0001 C CNN
+F 3 "" H 10900 3900 50  0001 C CNN
+	1    10900 3900
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R36
+U 1 0 52B0F619
+P 10900 5200
+AR Path="/52B0F619" Ref="R36"  Part="1" 
+AR Path="/5BBB45F5/52B0F619" Ref="R36"  Part="1" 
+F 0 "R36" H 10750 5259 59  0000 L BNN
+F 1 "10k" H 10750 5070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 5200 50  0001 C CNN
+F 3 "" H 10900 5200 50  0001 C CNN
+	1    10900 5200
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R37
+U 1 0 4723112D
+P 10900 6500
+AR Path="/4723112D" Ref="R37"  Part="1" 
+AR Path="/5BBB45F5/4723112D" Ref="R37"  Part="1" 
+F 0 "R37" H 10750 6559 59  0000 L BNN
+F 1 "10k" H 10750 6370 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 6500 50  0001 C CNN
+F 3 "" H 10900 6500 50  0001 C CNN
+	1    10900 6500
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R38
+U 1 0 3AD44629
+P 10900 7800
+AR Path="/3AD44629" Ref="R38"  Part="1" 
+AR Path="/5BBB45F5/3AD44629" Ref="R38"  Part="1" 
+F 0 "R38" H 10750 7859 59  0000 L BNN
+F 1 "10k" H 10750 7670 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 7800 50  0001 C CNN
+F 3 "" H 10900 7800 50  0001 C CNN
+	1    10900 7800
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R39
+U 1 0 352D39F6
+P 10900 1300
+AR Path="/352D39F6" Ref="R39"  Part="1" 
+AR Path="/5BBB45F5/352D39F6" Ref="R39"  Part="1" 
+F 0 "R39" H 10750 1359 59  0000 L BNN
+F 1 "10k" H 10750 1170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 1300 50  0001 C CNN
+F 3 "" H 10900 1300 50  0001 C CNN
+	1    10900 1300
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+37
+U 1 0 C9839833
+P 10900 7400
+AR Path="/C9839833" Ref="#P+37"  Part="1" 
+AR Path="/5BBB45F5/C9839833" Ref="#P+037"  Part="1" 
+F 0 "#P+037" H 10900 7400 50  0001 C CNN
+F 1 "+5V" V 10800 7200 59  0000 L BNN
+F 2 "" H 10900 7400 50  0001 C CNN
+F 3 "" H 10900 7400 50  0001 C CNN
+	1    10900 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+38
+U 1 0 5037E9A3
+P 10900 6100
+AR Path="/5037E9A3" Ref="#P+38"  Part="1" 
+AR Path="/5BBB45F5/5037E9A3" Ref="#P+038"  Part="1" 
+F 0 "#P+038" H 10900 6100 50  0001 C CNN
+F 1 "+5V" V 10800 5900 59  0000 L BNN
+F 2 "" H 10900 6100 50  0001 C CNN
+F 3 "" H 10900 6100 50  0001 C CNN
+	1    10900 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+39
+U 1 0 52C93008
+P 10900 4800
+AR Path="/52C93008" Ref="#P+39"  Part="1" 
+AR Path="/5BBB45F5/52C93008" Ref="#P+039"  Part="1" 
+F 0 "#P+039" H 10900 4800 50  0001 C CNN
+F 1 "+5V" V 10800 4600 59  0000 L BNN
+F 2 "" H 10900 4800 50  0001 C CNN
+F 3 "" H 10900 4800 50  0001 C CNN
+	1    10900 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+40
+U 1 0 E6A7331F
+P 10900 900
+AR Path="/E6A7331F" Ref="#P+40"  Part="1" 
+AR Path="/5BBB45F5/E6A7331F" Ref="#P+040"  Part="1" 
+F 0 "#P+040" H 10900 900 50  0001 C CNN
+F 1 "+5V" V 10800 700 59  0000 L BNN
+F 2 "" H 10900 900 50  0001 C CNN
+F 3 "" H 10900 900 50  0001 C CNN
+	1    10900 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+41
+U 1 0 15845FEF
+P 10900 3500
+AR Path="/15845FEF" Ref="#P+41"  Part="1" 
+AR Path="/5BBB45F5/15845FEF" Ref="#P+041"  Part="1" 
+F 0 "#P+041" H 10900 3500 50  0001 C CNN
+F 1 "+5V" V 10800 3300 59  0000 L BNN
+F 2 "" H 10900 3500 50  0001 C CNN
+F 3 "" H 10900 3500 50  0001 C CNN
+	1    10900 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER U$27
+U 1 0 88B45EA1
+P 12200 1500
+AR Path="/88B45EA1" Ref="U$27"  Part="1" 
+AR Path="/5BBB45F5/88B45EA1" Ref="U$27"  Part="1" 
+F 0 "U$27" H 12200 1500 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 1500 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 1500 50  0001 C CNN
+F 3 "" H 12200 1500 50  0001 C CNN
+	1    12200 1500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER U$39
+U 1 0 1511A889
+P 12200 4100
+AR Path="/1511A889" Ref="U$39"  Part="1" 
+AR Path="/5BBB45F5/1511A889" Ref="U$39"  Part="1" 
+F 0 "U$39" H 12200 4100 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 4100 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 4100 50  0001 C CNN
+F 3 "" H 12200 4100 50  0001 C CNN
+	1    12200 4100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER U$40
+U 1 0 BF9B7B38
+P 12200 5400
+AR Path="/BF9B7B38" Ref="U$40"  Part="1" 
+AR Path="/5BBB45F5/BF9B7B38" Ref="U$40"  Part="1" 
+F 0 "U$40" H 12200 5400 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 5400 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 5400 50  0001 C CNN
+F 3 "" H 12200 5400 50  0001 C CNN
+	1    12200 5400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER U$41
+U 1 0 CFCCCDAA
+P 12200 6700
+AR Path="/CFCCCDAA" Ref="U$41"  Part="1" 
+AR Path="/5BBB45F5/CFCCCDAA" Ref="U$41"  Part="1" 
+F 0 "U$41" H 12200 6700 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 6700 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 6700 50  0001 C CNN
+F 3 "" H 12200 6700 50  0001 C CNN
+	1    12200 6700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER X-MOTORDRIVER
+U 1 0 5E874C63
+P 12200 8000
+AR Path="/5E874C63" Ref="X-MOTORDRIVER"  Part="1" 
+AR Path="/5BBB45F5/5E874C63" Ref="X-MOTORDRIVER1"  Part="1" 
+F 0 "X-MOTORDRIVER1" H 12200 8000 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 8000 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 8000 50  0001 C CNN
+F 3 "" H 12200 8000 50  0001 C CNN
+	1    12200 8000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 XSTOP1
+U 1 0 895D1C15
+P 1700 1600
+AR Path="/895D1C15" Ref="XSTOP1"  Part="1" 
+AR Path="/5BBB45F5/895D1C15" Ref="XSTOP1"  Part="1" 
+F 0 "XSTOP1" H 1900 1600 59  0000 L BNN
+F 1 "MTA03-100" H 1900 1450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 1700 1600 50  0001 C CNN
+F 3 "" H 1700 1600 50  0001 C CNN
+	1    1700 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R44
+U 1 0 F1E6B811
+P 2200 1600
+AR Path="/F1E6B811" Ref="R44"  Part="1" 
+AR Path="/5BBB45F5/F1E6B811" Ref="R44"  Part="1" 
+F 0 "R44" H 2050 1659 59  0000 L BNN
+F 1 "1k" H 2050 1470 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2200 1600 50  0001 C CNN
+F 3 "" H 2200 1600 50  0001 C CNN
+	1    2200 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R45
+U 1 0 C18C78EC
+P 2500 1200
+AR Path="/C18C78EC" Ref="R45"  Part="1" 
+AR Path="/5BBB45F5/C18C78EC" Ref="R45"  Part="1" 
+F 0 "R45" H 2350 1259 59  0000 L BNN
+F 1 "0" H 2350 1070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2500 1200 50  0001 C CNN
+F 3 "" H 2500 1200 50  0001 C CNN
+	1    2500 1200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C23
+U 1 0 93AA069D
+P 2800 1300
+AR Path="/93AA069D" Ref="C23"  Part="1" 
+AR Path="/5BBB45F5/93AA069D" Ref="C23"  Part="1" 
+F 0 "C23" H 2860 1315 59  0000 L BNN
+F 1 "100nF" H 2860 1115 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 2800 1300 50  0001 C CNN
+F 3 "" H 2800 1300 50  0001 C CNN
+	1    2800 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+43
+U 1 0 D172CCD2
+P 2800 800
+AR Path="/D172CCD2" Ref="#P+43"  Part="1" 
+AR Path="/5BBB45F5/D172CCD2" Ref="#P+043"  Part="1" 
+F 0 "#P+043" H 2800 800 50  0001 C CNN
+F 1 "+5V" V 2700 600 59  0000 L BNN
+F 2 "" H 2800 800 50  0001 C CNN
+F 3 "" H 2800 800 50  0001 C CNN
+	1    2800 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R46
+U 1 0 A9545C97
+P 3100 1200
+AR Path="/A9545C97" Ref="R46"  Part="1" 
+AR Path="/5BBB45F5/A9545C97" Ref="R46"  Part="1" 
+F 0 "R46" H 2950 1259 59  0000 L BNN
+F 1 "1k" H 2950 1070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3100 1200 50  0001 C CNN
+F 3 "" H 3100 1200 50  0001 C CNN
+	1    3100 1200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+44
+U 1 0 EDB97D32
+P 2500 800
+AR Path="/EDB97D32" Ref="#P+44"  Part="1" 
+AR Path="/5BBB45F5/EDB97D32" Ref="#P+044"  Part="1" 
+F 0 "#P+044" H 2500 800 50  0001 C CNN
+F 1 "+12V" V 2400 600 59  0000 L BNN
+F 2 "" H 2500 800 50  0001 C CNN
+F 3 "" H 2500 800 50  0001 C CNN
+	1    2500 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$46
+U 1 0 53BDAA82
+P 2500 2500
+AR Path="/53BDAA82" Ref="#U$46"  Part="1" 
+AR Path="/5BBB45F5/53BDAA82" Ref="#U$046"  Part="1" 
+F 0 "#U$046" H 2500 2500 50  0001 C CNN
+F 1 "GND" H 2400 2400 59  0000 L BNN
+F 2 "" H 2500 2500 50  0001 C CNN
+F 3 "" H 2500 2500 50  0001 C CNN
+	1    2500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R47
+U 1 0 EFAE184B
+P 3500 2100
+AR Path="/EFAE184B" Ref="R47"  Part="1" 
+AR Path="/5BBB45F5/EFAE184B" Ref="R47"  Part="1" 
+F 0 "R47" H 3350 2159 59  0000 L BNN
+F 1 "R-EU_R0603" H 3350 1970 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3500 2100 50  0001 C CNN
+F 3 "" H 3500 2100 50  0001 C CNN
+	1    3500 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T4
+U 1 0 353E786D
+P 3400 1600
+AR Path="/353E786D" Ref="T4"  Part="1" 
+AR Path="/5BBB45F5/353E786D" Ref="T4"  Part="1" 
+F 0 "T4" H 3300 1700 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 3000 1800 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 3400 1600 50  0001 C CNN
+F 3 "" H 3400 1600 50  0001 C CNN
+	1    3400 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$47
+U 1 0 71FDE089
+P 3500 2500
+AR Path="/71FDE089" Ref="#U$47"  Part="1" 
+AR Path="/5BBB45F5/71FDE089" Ref="#U$047"  Part="1" 
+F 0 "#U$047" H 3500 2500 50  0001 C CNN
+F 1 "GND" H 3400 2400 59  0000 L BNN
+F 2 "" H 3500 2500 50  0001 C CNN
+F 3 "" H 3500 2500 50  0001 C CNN
+	1    3500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 YSTOP1
+U 1 0 150D02DC
+P 1700 3700
+AR Path="/150D02DC" Ref="YSTOP1"  Part="1" 
+AR Path="/5BBB45F5/150D02DC" Ref="YSTOP1"  Part="1" 
+F 0 "YSTOP1" H 1900 3700 59  0000 L BNN
+F 1 "MTA03-100" H 1900 3550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 1700 3700 50  0001 C CNN
+F 3 "" H 1700 3700 50  0001 C CNN
+	1    1700 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R48
+U 1 0 6E0C9EC0
+P 2200 3700
+AR Path="/6E0C9EC0" Ref="R48"  Part="1" 
+AR Path="/5BBB45F5/6E0C9EC0" Ref="R48"  Part="1" 
+F 0 "R48" H 2050 3759 59  0000 L BNN
+F 1 "1k" H 2050 3570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2200 3700 50  0001 C CNN
+F 3 "" H 2200 3700 50  0001 C CNN
+	1    2200 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R49
+U 1 0 41224E33
+P 2500 3300
+AR Path="/41224E33" Ref="R49"  Part="1" 
+AR Path="/5BBB45F5/41224E33" Ref="R49"  Part="1" 
+F 0 "R49" H 2350 3359 59  0000 L BNN
+F 1 "0" H 2350 3170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2500 3300 50  0001 C CNN
+F 3 "" H 2500 3300 50  0001 C CNN
+	1    2500 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C24
+U 1 0 7752927D
+P 2800 3400
+AR Path="/7752927D" Ref="C24"  Part="1" 
+AR Path="/5BBB45F5/7752927D" Ref="C24"  Part="1" 
+F 0 "C24" H 2860 3415 59  0000 L BNN
+F 1 "100nF" H 2860 3215 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 2800 3400 50  0001 C CNN
+F 3 "" H 2800 3400 50  0001 C CNN
+	1    2800 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+45
+U 1 0 E44956CC
+P 2800 2900
+AR Path="/E44956CC" Ref="#P+45"  Part="1" 
+AR Path="/5BBB45F5/E44956CC" Ref="#P+045"  Part="1" 
+F 0 "#P+045" H 2800 2900 50  0001 C CNN
+F 1 "+5V" V 2700 2700 59  0000 L BNN
+F 2 "" H 2800 2900 50  0001 C CNN
+F 3 "" H 2800 2900 50  0001 C CNN
+	1    2800 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R50
+U 1 0 61DBE7F5
+P 3100 3300
+AR Path="/61DBE7F5" Ref="R50"  Part="1" 
+AR Path="/5BBB45F5/61DBE7F5" Ref="R50"  Part="1" 
+F 0 "R50" H 2950 3359 59  0000 L BNN
+F 1 "1k" H 2950 3170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3100 3300 50  0001 C CNN
+F 3 "" H 3100 3300 50  0001 C CNN
+	1    3100 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+46
+U 1 0 7F99A92C
+P 2500 2900
+AR Path="/7F99A92C" Ref="#P+46"  Part="1" 
+AR Path="/5BBB45F5/7F99A92C" Ref="#P+046"  Part="1" 
+F 0 "#P+046" H 2500 2900 50  0001 C CNN
+F 1 "+12V" V 2400 2700 59  0000 L BNN
+F 2 "" H 2500 2900 50  0001 C CNN
+F 3 "" H 2500 2900 50  0001 C CNN
+	1    2500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$48
+U 1 0 15650906
+P 2500 4600
+AR Path="/15650906" Ref="#U$48"  Part="1" 
+AR Path="/5BBB45F5/15650906" Ref="#U$048"  Part="1" 
+F 0 "#U$048" H 2500 4600 50  0001 C CNN
+F 1 "GND" H 2400 4500 59  0000 L BNN
+F 2 "" H 2500 4600 50  0001 C CNN
+F 3 "" H 2500 4600 50  0001 C CNN
+	1    2500 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R51
+U 1 0 9D737D9F
+P 3500 4200
+AR Path="/9D737D9F" Ref="R51"  Part="1" 
+AR Path="/5BBB45F5/9D737D9F" Ref="R51"  Part="1" 
+F 0 "R51" H 3350 4259 59  0000 L BNN
+F 1 "R-EU_R0603" H 3350 4070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3500 4200 50  0001 C CNN
+F 3 "" H 3500 4200 50  0001 C CNN
+	1    3500 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T5
+U 1 0 27702C92
+P 3400 3700
+AR Path="/27702C92" Ref="T5"  Part="1" 
+AR Path="/5BBB45F5/27702C92" Ref="T5"  Part="1" 
+F 0 "T5" H 3000 4000 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 3000 3900 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 3400 3700 50  0001 C CNN
+F 3 "" H 3400 3700 50  0001 C CNN
+	1    3400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$49
+U 1 0 F6E78796
+P 3500 4600
+AR Path="/F6E78796" Ref="#U$49"  Part="1" 
+AR Path="/5BBB45F5/F6E78796" Ref="#U$049"  Part="1" 
+F 0 "#U$049" H 3500 4600 50  0001 C CNN
+F 1 "GND" H 3400 4500 59  0000 L BNN
+F 2 "" H 3500 4600 50  0001 C CNN
+F 3 "" H 3500 4600 50  0001 C CNN
+	1    3500 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA03-100 ZSTOP1
+U 1 0 972C83E8
+P 1700 5700
+AR Path="/972C83E8" Ref="ZSTOP1"  Part="1" 
+AR Path="/5BBB45F5/972C83E8" Ref="ZSTOP1"  Part="1" 
+F 0 "ZSTOP1" H 1900 5700 59  0000 L BNN
+F 1 "MTA03-100" H 1900 5550 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X03MTA" H 1700 5700 50  0001 C CNN
+F 3 "" H 1700 5700 50  0001 C CNN
+	1    1700 5700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R52
+U 1 0 6DFD33BA
+P 2200 5700
+AR Path="/6DFD33BA" Ref="R52"  Part="1" 
+AR Path="/5BBB45F5/6DFD33BA" Ref="R52"  Part="1" 
+F 0 "R52" H 2050 5759 59  0000 L BNN
+F 1 "1k" H 2050 5570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2200 5700 50  0001 C CNN
+F 3 "" H 2200 5700 50  0001 C CNN
+	1    2200 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R53
+U 1 0 430DCDB9
+P 2500 5300
+AR Path="/430DCDB9" Ref="R53"  Part="1" 
+AR Path="/5BBB45F5/430DCDB9" Ref="R53"  Part="1" 
+F 0 "R53" H 2350 5359 59  0000 L BNN
+F 1 "0" H 2350 5170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2500 5300 50  0001 C CNN
+F 3 "" H 2500 5300 50  0001 C CNN
+	1    2500 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:C-EU_C0603K C25
+U 1 0 5F5D481B
+P 2800 5400
+AR Path="/5F5D481B" Ref="C25"  Part="1" 
+AR Path="/5BBB45F5/5F5D481B" Ref="C25"  Part="1" 
+F 0 "C25" H 2860 5415 59  0000 L BNN
+F 1 "100nF" H 2860 5215 59  0000 L BNN
+F 2 "Zombiemaker-1.0:C0603" H 2800 5400 50  0001 C CNN
+F 3 "" H 2800 5400 50  0001 C CNN
+	1    2800 5400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+47
+U 1 0 D4FE4DFB
+P 2800 4900
+AR Path="/D4FE4DFB" Ref="#P+47"  Part="1" 
+AR Path="/5BBB45F5/D4FE4DFB" Ref="#P+047"  Part="1" 
+F 0 "#P+047" H 2800 4900 50  0001 C CNN
+F 1 "+5V" V 2700 4700 59  0000 L BNN
+F 2 "" H 2800 4900 50  0001 C CNN
+F 3 "" H 2800 4900 50  0001 C CNN
+	1    2800 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R54
+U 1 0 E473BAB7
+P 3100 5300
+AR Path="/E473BAB7" Ref="R54"  Part="1" 
+AR Path="/5BBB45F5/E473BAB7" Ref="R54"  Part="1" 
+F 0 "R54" H 2950 5359 59  0000 L BNN
+F 1 "1k" H 2950 5170 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3100 5300 50  0001 C CNN
+F 3 "" H 3100 5300 50  0001 C CNN
+	1    3100 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+48
+U 1 0 6271FE12
+P 2500 4900
+AR Path="/6271FE12" Ref="#P+48"  Part="1" 
+AR Path="/5BBB45F5/6271FE12" Ref="#P+048"  Part="1" 
+F 0 "#P+048" H 2500 4900 50  0001 C CNN
+F 1 "+12V" V 2400 4700 59  0000 L BNN
+F 2 "" H 2500 4900 50  0001 C CNN
+F 3 "" H 2500 4900 50  0001 C CNN
+	1    2500 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$50
+U 1 0 1C85CEBD
+P 2500 6600
+AR Path="/1C85CEBD" Ref="#U$50"  Part="1" 
+AR Path="/5BBB45F5/1C85CEBD" Ref="#U$050"  Part="1" 
+F 0 "#U$050" H 2500 6600 50  0001 C CNN
+F 1 "GND" H 2400 6500 59  0000 L BNN
+F 2 "" H 2500 6600 50  0001 C CNN
+F 3 "" H 2500 6600 50  0001 C CNN
+	1    2500 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R55
+U 1 0 E7E42ECE
+P 3500 6200
+AR Path="/E7E42ECE" Ref="R55"  Part="1" 
+AR Path="/5BBB45F5/E7E42ECE" Ref="R55"  Part="1" 
+F 0 "R55" H 3350 6259 59  0000 L BNN
+F 1 "R-EU_R0603" H 3350 6070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 3500 6200 50  0001 C CNN
+F 3 "" H 3500 6200 50  0001 C CNN
+	1    3500 6200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:-PNP-SOT23-BEC T6
+U 1 0 07270D9D
+P 3400 5700
+AR Path="/07270D9D" Ref="T6"  Part="1" 
+AR Path="/5BBB45F5/07270D9D" Ref="T6"  Part="1" 
+F 0 "T6" H 3000 6000 59  0000 L BNN
+F 1 "-PNP-SOT23-BEC" H 3000 5900 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SOT23-BEC" H 3400 5700 50  0001 C CNN
+F 3 "" H 3400 5700 50  0001 C CNN
+	1    3400 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$51
+U 1 0 773EFA15
+P 3500 6600
+AR Path="/773EFA15" Ref="#U$51"  Part="1" 
+AR Path="/5BBB45F5/773EFA15" Ref="#U$051"  Part="1" 
+F 0 "#U$051" H 3500 6600 50  0001 C CNN
+F 1 "GND" H 3400 6500 59  0000 L BNN
+F 2 "" H 3500 6600 50  0001 C CNN
+F 3 "" H 3500 6600 50  0001 C CNN
+	1    3500 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$59
+U 1 0 072A72F1
+P 13100 3500
+AR Path="/072A72F1" Ref="#U$59"  Part="1" 
+AR Path="/5BBB45F5/072A72F1" Ref="#U$059"  Part="1" 
+F 0 "#U$059" H 13100 3500 50  0001 C CNN
+F 1 "GND" H 13000 3400 59  0000 L BNN
+F 2 "" H 13100 3500 50  0001 C CNN
+F 3 "" H 13100 3500 50  0001 C CNN
+	1    13100 3500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP8
+U 1 0 357D3C8D
+P 11200 2900
+AR Path="/357D3C8D" Ref="JP8"  Part="1" 
+AR Path="/5BBB45F5/357D3C8D" Ref="JP8"  Part="1" 
+F 0 "JP8" H 11100 3000 59  0000 L BNN
+F 1 "SJ" H 11100 2750 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 11200 2900 50  0001 C CNN
+F 3 "" H 11200 2900 50  0001 C CNN
+	1    11200 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP12
+U 1 0 196A7625
+P 10900 3000
+AR Path="/196A7625" Ref="JP12"  Part="1" 
+AR Path="/5BBB45F5/196A7625" Ref="JP12"  Part="1" 
+F 0 "JP12" H 10800 3100 59  0000 L BNN
+F 1 "SJ" H 10800 2850 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10900 3000 50  0001 C CNN
+F 3 "" H 10900 3000 50  0001 C CNN
+	1    10900 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:SJ JP13
+U 1 0 9B8C9E68
+P 10600 3100
+AR Path="/9B8C9E68" Ref="JP13"  Part="1" 
+AR Path="/5BBB45F5/9B8C9E68" Ref="JP13"  Part="1" 
+F 0 "JP13" H 10500 3200 59  0000 L BNN
+F 1 "SJ" H 10500 2950 59  0000 L BNN
+F 2 "Zombiemaker-1.0:SJ" H 10600 3100 50  0001 C CNN
+F 3 "" H 10600 3100 50  0001 C CNN
+	1    10600 3100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDERM
+U 1 0 9F27E65E
+P 13300 2900
+AR Path="/9F27E65E" Ref="EXTRUDERM"  Part="1" 
+AR Path="/5BBB45F5/9F27E65E" Ref="EXTRUDERM2"  Part="1" 
+F 0 "EXTRUDERM2" H 13600 2900 59  0000 L BNN
+F 1 "MTA04-100" H 13600 2750 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13300 2900 50  0001 C CNN
+F 3 "" H 13300 2900 50  0001 C CNN
+	1    13300 2900
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+54
+U 1 0 67F3023D
+P 13200 2300
+AR Path="/67F3023D" Ref="#P+54"  Part="1" 
+AR Path="/5BBB45F5/67F3023D" Ref="#P+054"  Part="1" 
+F 0 "#P+054" H 13200 2300 50  0001 C CNN
+F 1 "+5V" V 13100 2100 59  0000 L BNN
+F 2 "" H 13200 2300 50  0001 C CNN
+F 3 "" H 13200 2300 50  0001 C CNN
+	1    13200 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+12V #P+55
+U 1 0 253FD3BB
+P 13700 2300
+AR Path="/253FD3BB" Ref="#P+55"  Part="1" 
+AR Path="/5BBB45F5/253FD3BB" Ref="#P+055"  Part="1" 
+F 0 "#P+055" H 13700 2300 50  0001 C CNN
+F 1 "+12V" V 13600 2100 59  0000 L BNN
+F 2 "" H 13700 2300 50  0001 C CNN
+F 3 "" H 13700 2300 50  0001 C CNN
+	1    13700 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+56
+U 1 0 94CAFB02
+P 10300 2500
+AR Path="/94CAFB02" Ref="#P+56"  Part="1" 
+AR Path="/5BBB45F5/94CAFB02" Ref="#P+056"  Part="1" 
+F 0 "#P+056" H 10300 2500 50  0001 C CNN
+F 1 "+5V" V 10200 2300 59  0000 L BNN
+F 2 "" H 10300 2500 50  0001 C CNN
+F 3 "" H 10300 2500 50  0001 C CNN
+	1    10300 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R62
+U 1 0 7608E7AD
+P 10900 2600
+AR Path="/7608E7AD" Ref="R62"  Part="1" 
+AR Path="/5BBB45F5/7608E7AD" Ref="R62"  Part="1" 
+F 0 "R62" H 10750 2659 59  0000 L BNN
+F 1 "10k" H 10750 2470 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10900 2600 50  0001 C CNN
+F 3 "" H 10900 2600 50  0001 C CNN
+	1    10900 2600
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:+5V #P+58
+U 1 0 4FFA80D5
+P 10900 2200
+AR Path="/4FFA80D5" Ref="#P+58"  Part="1" 
+AR Path="/5BBB45F5/4FFA80D5" Ref="#P+058"  Part="1" 
+F 0 "#P+058" H 10900 2200 50  0001 C CNN
+F 1 "+5V" V 10800 2000 59  0000 L BNN
+F 2 "" H 10900 2200 50  0001 C CNN
+F 3 "" H 10900 2200 50  0001 C CNN
+	1    10900 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:POLOLUESTEPPERDRIVER E1
+U 1 0 844E6D85
+P 12200 2800
+AR Path="/844E6D85" Ref="E1"  Part="1" 
+AR Path="/5BBB45F5/844E6D85" Ref="E1"  Part="1" 
+F 0 "E1" H 12200 2800 50  0001 C CNN
+F 1 "POLOLUESTEPPERDRIVER" H 12200 2800 50  0001 C CNN
+F 2 "Zombiemaker-1.0:DIL16" H 12200 2800 50  0001 C CNN
+F 3 "" H 12200 2800 50  0001 C CNN
+	1    12200 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C30
+U 1 0 2E373BFC
+P 13900 1700
+AR Path="/2E373BFC" Ref="C30"  Part="1" 
+AR Path="/5BBB45F5/2E373BFC" Ref="C30"  Part="1" 
+F 0 "C30" H 13945 1719 59  0000 L BNN
+F 1 "100µF" H 13945 1519 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 1700 50  0001 C CNN
+F 3 "" H 13900 1700 50  0001 C CNN
+	1    13900 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C31
+U 1 0 39EF8357
+P 13900 4300
+AR Path="/39EF8357" Ref="C31"  Part="1" 
+AR Path="/5BBB45F5/39EF8357" Ref="C31"  Part="1" 
+F 0 "C31" H 13945 4319 59  0000 L BNN
+F 1 "100µF" H 13945 4119 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 4300 50  0001 C CNN
+F 3 "" H 13900 4300 50  0001 C CNN
+	1    13900 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C32
+U 1 0 C8F9FF25
+P 13900 5600
+AR Path="/C8F9FF25" Ref="C32"  Part="1" 
+AR Path="/5BBB45F5/C8F9FF25" Ref="C32"  Part="1" 
+F 0 "C32" H 13945 5619 59  0000 L BNN
+F 1 "100µF" H 13945 5419 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 5600 50  0001 C CNN
+F 3 "" H 13900 5600 50  0001 C CNN
+	1    13900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C33
+U 1 0 F5336CC6
+P 13900 7000
+AR Path="/F5336CC6" Ref="C33"  Part="1" 
+AR Path="/5BBB45F5/F5336CC6" Ref="C33"  Part="1" 
+F 0 "C33" H 13945 7019 59  0000 L BNN
+F 1 "100µF" H 13945 6819 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 7000 50  0001 C CNN
+F 3 "" H 13900 7000 50  0001 C CNN
+	1    13900 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C34
+U 1 0 60F1E65B
+P 13900 8200
+AR Path="/60F1E65B" Ref="C34"  Part="1" 
+AR Path="/5BBB45F5/60F1E65B" Ref="C34"  Part="1" 
+F 0 "C34" H 13945 8219 59  0000 L BNN
+F 1 "100µF" H 13945 8019 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 8200 50  0001 C CNN
+F 3 "" H 13900 8200 50  0001 C CNN
+	1    13900 8200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:ELKOS_D C36
+U 1 0 673DE8C9
+P 13900 3000
+AR Path="/673DE8C9" Ref="C36"  Part="1" 
+AR Path="/5BBB45F5/673DE8C9" Ref="C36"  Part="1" 
+F 0 "C36" H 13945 3019 59  0000 L BNN
+F 1 "100µF" H 13945 2819 59  0000 L BNN
+F 2 "Zombiemaker-1.0:PANASONIC_D" H 13900 3000 50  0001 C CNN
+F 3 "" H 13900 3000 50  0001 C CNN
+	1    13900 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$73
+U 1 0 0D6BAA89
+P 13900 2200
+AR Path="/0D6BAA89" Ref="#U$73"  Part="1" 
+AR Path="/5BBB45F5/0D6BAA89" Ref="#U$073"  Part="1" 
+F 0 "#U$073" H 13900 2200 50  0001 C CNN
+F 1 "GND" H 13800 2100 59  0000 L BNN
+F 2 "" H 13900 2200 50  0001 C CNN
+F 3 "" H 13900 2200 50  0001 C CNN
+	1    13900 2200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$74
+U 1 0 2C86A92E
+P 13900 4800
+AR Path="/2C86A92E" Ref="#U$74"  Part="1" 
+AR Path="/5BBB45F5/2C86A92E" Ref="#U$074"  Part="1" 
+F 0 "#U$074" H 13900 4800 50  0001 C CNN
+F 1 "GND" H 13800 4700 59  0000 L BNN
+F 2 "" H 13900 4800 50  0001 C CNN
+F 3 "" H 13900 4800 50  0001 C CNN
+	1    13900 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$75
+U 1 0 B2F301CA
+P 13900 6200
+AR Path="/B2F301CA" Ref="#U$75"  Part="1" 
+AR Path="/5BBB45F5/B2F301CA" Ref="#U$075"  Part="1" 
+F 0 "#U$075" H 13900 6200 50  0001 C CNN
+F 1 "GND" H 13800 6100 59  0000 L BNN
+F 2 "" H 13900 6200 50  0001 C CNN
+F 3 "" H 13900 6200 50  0001 C CNN
+	1    13900 6200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$76
+U 1 0 299EB625
+P 13900 7400
+AR Path="/299EB625" Ref="#U$76"  Part="1" 
+AR Path="/5BBB45F5/299EB625" Ref="#U$076"  Part="1" 
+F 0 "#U$076" H 13900 7400 50  0001 C CNN
+F 1 "GND" H 13800 7300 59  0000 L BNN
+F 2 "" H 13900 7400 50  0001 C CNN
+F 3 "" H 13900 7400 50  0001 C CNN
+	1    13900 7400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$77
+U 1 0 9A1B0C17
+P 13900 8700
+AR Path="/9A1B0C17" Ref="#U$77"  Part="1" 
+AR Path="/5BBB45F5/9A1B0C17" Ref="#U$077"  Part="1" 
+F 0 "#U$077" H 13900 8700 50  0001 C CNN
+F 1 "GND" H 13800 8600 59  0000 L BNN
+F 2 "" H 13900 8700 50  0001 C CNN
+F 3 "" H 13900 8700 50  0001 C CNN
+	1    13900 8700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$79
+U 1 0 A488A5D8
+P 13900 3600
+AR Path="/A488A5D8" Ref="#U$79"  Part="1" 
+AR Path="/5BBB45F5/A488A5D8" Ref="#U$079"  Part="1" 
+F 0 "#U$079" H 13900 3600 50  0001 C CNN
+F 1 "GND" H 13800 3500 59  0000 L BNN
+F 2 "" H 13900 3600 50  0001 C CNN
+F 3 "" H 13900 3600 50  0001 C CNN
+	1    13900 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R69
+U 1 0 EFEE4694
+P 10400 3500
+AR Path="/EFEE4694" Ref="R69"  Part="1" 
+AR Path="/5BBB45F5/EFEE4694" Ref="R69"  Part="1" 
+F 0 "R69" H 10250 3559 59  0000 L BNN
+F 1 "10k" H 10250 3370 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 3500 50  0001 C CNN
+F 3 "" H 10400 3500 50  0001 C CNN
+	1    10400 3500
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R71
+U 1 0 58DA2A05
+P 10400 2200
+AR Path="/58DA2A05" Ref="R71"  Part="1" 
+AR Path="/5BBB45F5/58DA2A05" Ref="R71"  Part="1" 
+F 0 "R71" H 10250 2259 59  0000 L BNN
+F 1 "10k" H 10250 2070 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 2200 50  0001 C CNN
+F 3 "" H 10400 2200 50  0001 C CNN
+	1    10400 2200
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R72
+U 1 0 7ABF2ACC
+P 10400 4800
+AR Path="/7ABF2ACC" Ref="R72"  Part="1" 
+AR Path="/5BBB45F5/7ABF2ACC" Ref="R72"  Part="1" 
+F 0 "R72" H 10250 4859 59  0000 L BNN
+F 1 "10k" H 10250 4670 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 4800 50  0001 C CNN
+F 3 "" H 10400 4800 50  0001 C CNN
+	1    10400 4800
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R73
+U 1 0 706A8587
+P 10400 6100
+AR Path="/706A8587" Ref="R73"  Part="1" 
+AR Path="/5BBB45F5/706A8587" Ref="R73"  Part="1" 
+F 0 "R73" H 10250 6159 59  0000 L BNN
+F 1 "10k" H 10250 5970 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 6100 50  0001 C CNN
+F 3 "" H 10400 6100 50  0001 C CNN
+	1    10400 6100
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R74
+U 1 0 09DB7CE7
+P 10400 7400
+AR Path="/09DB7CE7" Ref="R74"  Part="1" 
+AR Path="/5BBB45F5/09DB7CE7" Ref="R74"  Part="1" 
+F 0 "R74" H 10250 7459 59  0000 L BNN
+F 1 "10k" H 10250 7270 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 7400 50  0001 C CNN
+F 3 "" H 10400 7400 50  0001 C CNN
+	1    10400 7400
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R75
+U 1 0 0F876830
+P 10400 8700
+AR Path="/0F876830" Ref="R75"  Part="1" 
+AR Path="/5BBB45F5/0F876830" Ref="R75"  Part="1" 
+F 0 "R75" H 10250 8759 59  0000 L BNN
+F 1 "10k" H 10250 8570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 10400 8700 50  0001 C CNN
+F 3 "" H 10400 8700 50  0001 C CNN
+	1    10400 8700
+	0    -1   1    0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$80
+U 1 0 6E5A9549
+P 10400 2500
+AR Path="/6E5A9549" Ref="#U$80"  Part="1" 
+AR Path="/5BBB45F5/6E5A9549" Ref="#U$080"  Part="1" 
+F 0 "#U$080" H 10400 2500 50  0001 C CNN
+F 1 "GND" H 10300 2400 59  0000 L BNN
+F 2 "" H 10400 2500 50  0001 C CNN
+F 3 "" H 10400 2500 50  0001 C CNN
+	1    10400 2500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$82
+U 1 0 C66F0688
+P 10400 3800
+AR Path="/C66F0688" Ref="#U$82"  Part="1" 
+AR Path="/5BBB45F5/C66F0688" Ref="#U$082"  Part="1" 
+F 0 "#U$082" H 10400 3800 50  0001 C CNN
+F 1 "GND" H 10300 3700 59  0000 L BNN
+F 2 "" H 10400 3800 50  0001 C CNN
+F 3 "" H 10400 3800 50  0001 C CNN
+	1    10400 3800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$83
+U 1 0 767C1805
+P 10400 5100
+AR Path="/767C1805" Ref="#U$83"  Part="1" 
+AR Path="/5BBB45F5/767C1805" Ref="#U$083"  Part="1" 
+F 0 "#U$083" H 10400 5100 50  0001 C CNN
+F 1 "GND" H 10300 5000 59  0000 L BNN
+F 2 "" H 10400 5100 50  0001 C CNN
+F 3 "" H 10400 5100 50  0001 C CNN
+	1    10400 5100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$84
+U 1 0 EC61F777
+P 10400 6400
+AR Path="/EC61F777" Ref="#U$84"  Part="1" 
+AR Path="/5BBB45F5/EC61F777" Ref="#U$084"  Part="1" 
+F 0 "#U$084" H 10400 6400 50  0001 C CNN
+F 1 "GND" H 10300 6300 59  0000 L BNN
+F 2 "" H 10400 6400 50  0001 C CNN
+F 3 "" H 10400 6400 50  0001 C CNN
+	1    10400 6400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$85
+U 1 0 B088C125
+P 10400 7700
+AR Path="/B088C125" Ref="#U$85"  Part="1" 
+AR Path="/5BBB45F5/B088C125" Ref="#U$085"  Part="1" 
+F 0 "#U$085" H 10400 7700 50  0001 C CNN
+F 1 "GND" H 10300 7600 59  0000 L BNN
+F 2 "" H 10400 7700 50  0001 C CNN
+F 3 "" H 10400 7700 50  0001 C CNN
+	1    10400 7700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:GND #U$86
+U 1 0 B0198CF4
+P 10400 9000
+AR Path="/B0198CF4" Ref="#U$86"  Part="1" 
+AR Path="/5BBB45F5/B0198CF4" Ref="#U$086"  Part="1" 
+F 0 "#U$086" H 10400 9000 50  0001 C CNN
+F 1 "GND" H 10300 8900 59  0000 L BNN
+F 2 "" H 10400 9000 50  0001 C CNN
+F 3 "" H 10400 9000 50  0001 C CNN
+	1    10400 9000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R76
+U 1 0 794096E8
+P 2900 1900
+AR Path="/794096E8" Ref="R76"  Part="1" 
+AR Path="/5BBB45F5/794096E8" Ref="R76"  Part="1" 
+F 0 "R76" H 2750 1959 59  0000 L BNN
+F 1 "0" H 2750 1770 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2900 1900 50  0001 C CNN
+F 3 "" H 2900 1900 50  0001 C CNN
+	1    2900 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R77
+U 1 0 35A181E6
+P 6000 1900
+AR Path="/35A181E6" Ref="R77"  Part="1" 
+AR Path="/5BBB45F5/35A181E6" Ref="R77"  Part="1" 
+F 0 "R77" H 5850 1959 59  0000 L BNN
+F 1 "0" H 5850 1770 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6000 1900 50  0001 C CNN
+F 3 "" H 6000 1900 50  0001 C CNN
+	1    6000 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R78
+U 1 0 AD804099
+P 2900 4000
+AR Path="/AD804099" Ref="R78"  Part="1" 
+AR Path="/5BBB45F5/AD804099" Ref="R78"  Part="1" 
+F 0 "R78" H 2750 4059 59  0000 L BNN
+F 1 "0" H 2750 3870 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2900 4000 50  0001 C CNN
+F 3 "" H 2900 4000 50  0001 C CNN
+	1    2900 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R79
+U 1 0 DF6C92A0
+P 6000 4000
+AR Path="/DF6C92A0" Ref="R79"  Part="1" 
+AR Path="/5BBB45F5/DF6C92A0" Ref="R79"  Part="1" 
+F 0 "R79" H 5850 4059 59  0000 L BNN
+F 1 "0" H 5850 3870 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6000 4000 50  0001 C CNN
+F 3 "" H 6000 4000 50  0001 C CNN
+	1    6000 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R80
+U 1 0 64D42647
+P 2900 6000
+AR Path="/64D42647" Ref="R80"  Part="1" 
+AR Path="/5BBB45F5/64D42647" Ref="R80"  Part="1" 
+F 0 "R80" H 2750 6059 59  0000 L BNN
+F 1 "0" H 2750 5870 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 2900 6000 50  0001 C CNN
+F 3 "" H 2900 6000 50  0001 C CNN
+	1    2900 6000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R81
+U 1 0 0679A788
+P 6000 6000
+AR Path="/0679A788" Ref="R81"  Part="1" 
+AR Path="/5BBB45F5/0679A788" Ref="R81"  Part="1" 
+F 0 "R81" H 5850 6059 59  0000 L BNN
+F 1 "0" H 5850 5870 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 6000 6000 50  0001 C CNN
+F 3 "" H 6000 6000 50  0001 C CNN
+	1    6000 6000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 Z-MOTOR1
+U 1 0 67D44531
+P 13500 5500
+AR Path="/67D44531" Ref="Z-MOTOR1"  Part="1" 
+AR Path="/5BBB45F5/67D44531" Ref="Z-MOTOR1"  Part="1" 
+F 0 "Z-MOTOR1" H 13800 5500 59  0000 L BNN
+F 1 "MTA04-100" H 13800 5350 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 5500 50  0001 C CNN
+F 3 "" H 13500 5500 50  0001 C CNN
+	1    13500 5500
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDER1M1
+U 1 0 758FF956
+P 13500 4200
+AR Path="/758FF956" Ref="EXTRUDER1M1"  Part="1" 
+AR Path="/5BBB45F5/758FF956" Ref="EXTRUDER1M1"  Part="1" 
+F 0 "EXTRUDER1M1" H 13800 4200 59  0000 L BNN
+F 1 "MTA04-100" H 13800 4050 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 4200 50  0001 C CNN
+F 3 "" H 13500 4200 50  0001 C CNN
+	1    13500 4200
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDERM1
+U 1 0 3490F75E
+P 13500 2900
+AR Path="/3490F75E" Ref="EXTRUDERM1"  Part="1" 
+AR Path="/5BBB45F5/3490F75E" Ref="EXTRUDERM1"  Part="1" 
+F 0 "EXTRUDERM1" H 13800 2900 59  0000 L BNN
+F 1 "MTA04-100" H 13800 2750 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 2900 50  0001 C CNN
+F 3 "" H 13500 2900 50  0001 C CNN
+	1    13500 2900
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 EXTRUDER2M1
+U 1 0 1F64204C
+P 13500 1600
+AR Path="/1F64204C" Ref="EXTRUDER2M1"  Part="1" 
+AR Path="/5BBB45F5/1F64204C" Ref="EXTRUDER2M1"  Part="1" 
+F 0 "EXTRUDER2M1" H 13800 1600 59  0000 L BNN
+F 1 "MTA04-100" H 13800 1450 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 1600 50  0001 C CNN
+F 3 "" H 13500 1600 50  0001 C CNN
+	1    13500 1600
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 X-MOTOR1
+U 1 0 ADD5AC54
+P 13500 8100
+AR Path="/ADD5AC54" Ref="X-MOTOR1"  Part="1" 
+AR Path="/5BBB45F5/ADD5AC54" Ref="X-MOTOR1"  Part="1" 
+F 0 "X-MOTOR1" H 13800 8100 59  0000 L BNN
+F 1 "MTA04-100" H 13800 7950 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 8100 50  0001 C CNN
+F 3 "" H 13500 8100 50  0001 C CNN
+	1    13500 8100
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:MTA04-100 Y-MOTOR1
+U 1 0 A1837E2E
+P 13500 6800
+AR Path="/A1837E2E" Ref="Y-MOTOR1"  Part="1" 
+AR Path="/5BBB45F5/A1837E2E" Ref="Y-MOTOR1"  Part="1" 
+F 0 "Y-MOTOR1" H 13800 6800 59  0000 L BNN
+F 1 "MTA04-100" H 13800 6650 59  0000 L BNN
+F 2 "Zombiemaker-1.0:10X04MTA" H 13500 6800 50  0001 C CNN
+F 3 "" H 13500 6800 50  0001 C CNN
+	1    13500 6800
+	0    1    -1   0   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R89
+U 1 0 8EBEDC7C
+P 9700 2800
+AR Path="/8EBEDC7C" Ref="R89"  Part="1" 
+AR Path="/5BBB45F5/8EBEDC7C" Ref="R89"  Part="1" 
+F 0 "R89" H 9550 2859 59  0000 L BNN
+F 1 "10k" H 9550 2670 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 2800 50  0001 C CNN
+F 3 "" H 9700 2800 50  0001 C CNN
+	1    9700 2800
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R90
+U 1 0 09338648
+P 9700 4100
+AR Path="/09338648" Ref="R90"  Part="1" 
+AR Path="/5BBB45F5/09338648" Ref="R90"  Part="1" 
+F 0 "R90" H 9550 4159 59  0000 L BNN
+F 1 "10k" H 9550 3970 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 4100 50  0001 C CNN
+F 3 "" H 9700 4100 50  0001 C CNN
+	1    9700 4100
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R91
+U 1 0 050AEAD5
+P 9700 5400
+AR Path="/050AEAD5" Ref="R91"  Part="1" 
+AR Path="/5BBB45F5/050AEAD5" Ref="R91"  Part="1" 
+F 0 "R91" H 9550 5459 59  0000 L BNN
+F 1 "10k" H 9550 5270 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 5400 50  0001 C CNN
+F 3 "" H 9700 5400 50  0001 C CNN
+	1    9700 5400
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R92
+U 1 0 A9352B56
+P 9700 6700
+AR Path="/A9352B56" Ref="R92"  Part="1" 
+AR Path="/5BBB45F5/A9352B56" Ref="R92"  Part="1" 
+F 0 "R92" H 9550 6759 59  0000 L BNN
+F 1 "10k" H 9550 6570 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 6700 50  0001 C CNN
+F 3 "" H 9700 6700 50  0001 C CNN
+	1    9700 6700
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R93
+U 1 0 804E41C2
+P 9700 1500
+AR Path="/804E41C2" Ref="R93"  Part="1" 
+AR Path="/5BBB45F5/804E41C2" Ref="R93"  Part="1" 
+F 0 "R93" H 9550 1559 59  0000 L BNN
+F 1 "10k" H 9550 1370 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 1500 50  0001 C CNN
+F 3 "" H 9700 1500 50  0001 C CNN
+	1    9700 1500
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:R-EU_R0603 R94
+U 1 0 B850FD4C
+P 9700 8000
+AR Path="/B850FD4C" Ref="R94"  Part="1" 
+AR Path="/5BBB45F5/B850FD4C" Ref="R94"  Part="1" 
+F 0 "R94" H 9550 8059 59  0000 L BNN
+F 1 "10k" H 9550 7870 59  0000 L BNN
+F 2 "Zombiemaker-1.0:R_SMD0603" H 9700 8000 50  0001 C CNN
+F 3 "" H 9700 8000 50  0001 C CNN
+	1    9700 8000
+	1    0    0    1   
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:DINA3_L #FRAME2
+U 1 0 B9163575
+P 900 10700
+AR Path="/B9163575" Ref="#FRAME2"  Part="1" 
+AR Path="/5BBB45F5/B9163575" Ref="#FRAME2"  Part="1" 
+F 0 "#FRAME2" H 900 10700 50  0001 C CNN
+F 1 "DINA3_L" H 900 10700 50  0001 C CNN
+F 2 "" H 900 10700 50  0001 C CNN
+F 3 "" H 900 10700 50  0001 C CNN
+	1    900  10700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Zombiemaker-1.0-eagle-import:DINA3_L #FRAME2
+U 2 0 B9163579
+P 12200 10700
+AR Path="/B9163579" Ref="#FRAME2"  Part="2" 
+AR Path="/5BBB45F5/B9163579" Ref="#FRAME2"  Part="2" 
+F 0 "#FRAME2" H 12200 10700 50  0001 C CNN
+F 1 "DINA3_L" H 12200 10700 50  0001 C CNN
+F 2 "" H 12200 10700 50  0001 C CNN
+F 3 "" H 12200 10700 50  0001 C CNN
+	2    12200 10700
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
