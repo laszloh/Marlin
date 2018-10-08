@@ -3,7 +3,7 @@ EELAYER 26 0
 EELAYER END
 $Descr User 17518 9846
 encoding utf-8
-Sheet 1 5
+Sheet 2 5
 Title ""
 Date ""
 Rev ""
@@ -127,10 +127,6 @@ Wire Wire Line
 	5300 1600 5300 1900
 Wire Wire Line
 	6200 1900 6200 800 
-Wire Wire Line
-	6200 800  7300 800 
-Wire Wire Line
-	7400 800  7300 800 
 Connection ~ 6800 1900
 Connection ~ 6200 1900
 Connection ~ 5300 1900
@@ -472,19 +468,6 @@ F 3 "" H 900 9000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Zombiemaker-1.0-eagle-import:DINA3_L #FRAME4
-U 2 0 5A848120
-P 12200 9000
-AR Path="/5A848120" Ref="#FRAME4"  Part="2" 
-AR Path="/5BBB3611/5A848120" Ref="#FRAME4"  Part="2" 
-F 0 "#FRAME4" H 12200 9000 50  0001 C CNN
-F 1 "DINA3_L" H 12200 9000 50  0001 C CNN
-F 2 "" H 12200 9000 50  0001 C CNN
-F 3 "" H 12200 9000 50  0001 C CNN
-	2    12200 9000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Zombiemaker-1.0-eagle-import:+12V #P+36
 U 1 0 B49FF82F
 P 3900 1500
@@ -666,4 +649,6 @@ F 3 "" H 7700 1300 50  0001 C CNN
 	1    7700 1300
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6200 800  7400 800 
 $EndSCHEMATC
