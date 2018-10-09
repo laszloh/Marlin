@@ -187,6 +187,9 @@ _autosave-*
 *-save.pro
 *-save.kicad_pcb
 
+# Library files
+!Hardware/**/*.lib
+
 # Netlist files (exported from Eeschema)
 *.net
 
