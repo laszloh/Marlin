@@ -233,6 +233,7 @@
 #elif MB(GT2560_V3_A20)
   #include "mega/pins_GT2560_V3_A20.h"          // ATmega2560                             env:megaatmega2560
 #elif MB(EINSTART_S)
+<<<<<<< HEAD
   #include "mega/pins_EINSTART-S.h"             // ATmega1280, ATmega2560                 env:megaatmega1280 env:megaatmega2560
 #elif MB(WANHAO_ONEPLUS)
   #include "mega/pins_WANHAO_ONEPLUS.h"         // ATmega2560                             env:megaatmega2560
@@ -240,6 +241,11 @@
   #include "mega/pins_OVERLORD.h"               // ATmega2560                             env:megaatmega2560
 #elif MB(HJC2560C_REV2)
   #include "mega/pins_HJC2560C_REV2.h"          // ATmega2560                             env:megaatmega2560
+=======
+  #include "pins_EINSTART-S.h"        // ATmega1280, ATmega2560                     env:megaatmega1280 env:megaatmega2560
+elif MB(XEED)
+  #include "pins_XEED.h"              // ATmega2560                                 env:megaatmega2560
+>>>>>>> WIP commint
 
 //
 // ATmega1281, ATmega2561
