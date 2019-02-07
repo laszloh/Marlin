@@ -243,7 +243,7 @@
   #include "mega/pins_HJC2560C_REV2.h"          // ATmega2560                             env:megaatmega2560
 =======
   #include "pins_EINSTART-S.h"        // ATmega1280, ATmega2560                     env:megaatmega1280 env:megaatmega2560
-elif MB(XEED)
+#elif MB(XEED)
   #include "pins_XEED.h"              // ATmega2560                                 env:megaatmega2560
 >>>>>>> WIP commint
 

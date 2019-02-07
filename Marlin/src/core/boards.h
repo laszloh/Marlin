@@ -134,6 +134,7 @@
 #define BOARD_GT2560_V3_A20           1318  // Geeetech GT2560 Rev B for A20(M/D)
 #define BOARD_EINSTART_S              1319  // Einstart retrofit
 #define BOARD_WANHAO_ONEPLUS          1320  // Wanhao 0ne+ i3 Mini
+#define BOARD_XEED                    1321  // Leapfrog Xeed
 
 //
 // ATmega1281, ATmega2561
