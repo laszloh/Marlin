@@ -49,6 +49,10 @@
 #define Y_DIR_PIN          22
 #define Y_ENABLE_PIN       24
 
+#define Z_STEP_PIN         31
+#define Z_DIR_PIN          32
+#define Z_ENABLE_PIN       30
+
 #define Z2_STEP_PIN        28
 #define Z2_DIR_PIN         63
 #define Z2_ENABLE_PIN      29
@@ -57,10 +61,28 @@
 #define Z3_DIR_PIN         15
 #define Z3_ENABLE_PIN      39
 
+#define E0_STEP_PIN        34
+#define E0_DIR_PIN         35
+#define E0_ENABLE_PIN      33
+
+#define E1_STEP_PIN        37
+#define E1_DIR_PIN         40
+#define E1_ENABLE_PIN      36
+
+//
+// Temperature Sensors
+//
+#define TEMP_0_PIN         13   // Analog Input
+#define TEMP_1_PIN         15    // Analog Input
+#define TEMP_BED_PIN       14   // Analog Input
+
 //
 // Heaters / Fans
 //
+#define HEATER_0_PIN        9
+#define HEATER_1_PIN        8
 #define HEATER_BED_PIN      6
+
 #define FAN_PIN             10
 
 //
