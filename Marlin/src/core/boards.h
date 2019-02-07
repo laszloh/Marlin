@@ -119,6 +119,7 @@
 #define BOARD_GT2560_V3_MC2     73    // Geeetech GT2560 Rev B for Mecreator2
 #define BOARD_GT2560_V3_A20     86    // Geeetech GT2560 Rev B for A20(M/D)
 #define BOARD_EINSTART_S        666   // Einstart retrofit
+#define BOARD_XEED              998   // Leapfrog Xeed
 
 //
 // ATmega1281, ATmega2561

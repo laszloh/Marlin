@@ -43,13 +43,15 @@
 //
 // Steppers
 //
-#define X_STEP_PIN         28
-#define X_DIR_PIN          63
-#define X_ENABLE_PIN       29
+#ifndef IS_LF_XEED
+  #define X_STEP_PIN         28
+  #define X_DIR_PIN          63
+  #define X_ENABLE_PIN       29
 
-#define Y_STEP_PIN         14   // A6
-#define Y_DIR_PIN          15   // A0
-#define Y_ENABLE_PIN       39
+  #define Y_STEP_PIN         14   // A6
+  #define Y_DIR_PIN          15   // A0
+  #define Y_ENABLE_PIN       39
+#endif
 
 #define Z_STEP_PIN         31   // A2
 #define Z_DIR_PIN          32   // A6

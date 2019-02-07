@@ -1837,7 +1837,7 @@
  * Use the to rotary encoders and the pulse sonsor to detect
  * filament movement 
  */
-//#define FILAMENT_MOVEMENT
+#define FILAMENT_MOVEMENT
 #if ENABLED(FILAMENT_MOVEMENT)
   // #define FILAMENT_E0_PIN      10    // if not defined in board
   #if EXTRUDERS == 2
