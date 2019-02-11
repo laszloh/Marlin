@@ -60,10 +60,7 @@
 //
 // Heaters / Fans
 //
-#undef HEATER_BED_PIN
 #define HEATER_BED_PIN      6
-
-#undef FAN_PIN
 #define FAN_PIN             10
 
 //
