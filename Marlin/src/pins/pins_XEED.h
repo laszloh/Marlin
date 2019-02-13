@@ -33,6 +33,10 @@
 #define IS_LF_XEED
 #include "pins_LEAPFROG.h"
 
+// Y-Min and Y-Max are switched
+#define Y_MAX_PIN          48
+#define Y_MIN_PIN          -1
+
 //
 // Steppers, which are attached to the
 // extended connector
@@ -65,6 +69,7 @@
 #define FIL_RUNOUT_PIN      44
 #define FIL_RUNOUT2_PIN     42
 #define DOOR_PIN            45
-#define SOL2_PIN            7
+#define SOL1_PIN            7
+#define SOL2_PIN            16
 
 

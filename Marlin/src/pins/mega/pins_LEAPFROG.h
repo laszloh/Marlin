@@ -36,8 +36,10 @@
 //
 #define X_MIN_PIN          47
 #define X_MAX_PIN           2
-#define Y_MIN_PIN          48
-#define Y_MAX_PIN          15
+#ifndef IS_LF_XEED
+  #define Y_MIN_PIN          48
+  #define Y_MAX_PIN          15
+#endif
 #define Z_MIN_PIN          49
 #define Z_MAX_PIN          -1
 
@@ -90,8 +92,8 @@
 //
 #define SDSS               11
 #define LED_PIN            13
-#define SOL1_PIN           16
 #ifndef IS_LF_XEED
+  #define SOL1_PIN           16
   #define SOL2_PIN           17
 #endif
 
