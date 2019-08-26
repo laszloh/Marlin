@@ -615,9 +615,9 @@
   // Use the amplification factor to de-/increase correction step.
   // In case the stepper (spindle) position is further out than the test point
   // Use a value > 1. NOTE: This may cause instability
-  #define Z_STEPPER_ALIGN_AMP 1.0
+  #define Z_STEPPER_ALIGN_AMP 1.02
   // Stop criterion. If the accuracy is better than this stop iterating early
-  #define Z_STEPPER_ALIGN_ACC 0.02
+  #define Z_STEPPER_ALIGN_ACC 0.04
 #endif
 
 // @section motion
@@ -2338,7 +2338,7 @@
  * Use the to rotary encoders and the pulse sonsor to detect
  * filament movement 
  */
-#define FILAMENT_MOVEMENT
+//#define FILAMENT_MOVEMENT
 #if ENABLED(FILAMENT_MOVEMENT)
   // #define FILAMENT_E0_PIN      10    // if not defined in board
   #if EXTRUDERS == 2
@@ -2488,7 +2488,7 @@
  */
 #define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
-  //#define HOST_PROMPT_SUPPORT
+  #define HOST_PROMPT_SUPPORT
 #endif
 
 /**
