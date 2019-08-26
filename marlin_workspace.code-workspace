@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\Users\\hel83wi\\.platformio\\penv\\Scripts;C:\\Users\\hel83wi\\.platformio\\penv;C:\\Perl520\\Perl64\\bin;C:\\Perl520\\Perl64\\site\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\gs\\gs9.21\\bin; C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Oracle\\Client\\bin;C:\\Program Files\\Anaconda3\\BOSCH;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\OpenText\\Viewer\\bin;C:\\Program Files\\7-Zip;C:\\Program Files\\MATLAB\\MATLAB Compiler Runtime\\v82\\runtime\\win64;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\MATLAB\\MATLAB Compiler Runtime\\v79\\runtime\\win32;C:\\Program Files (x86)\\Plantronics\\Spokes3G\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Siemens\\Teamcenter12.1\\Visualization\\Products\\Mockup\\ClearanceDB;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\hel83wi\\AppData\\Local\\Microsoft\\WindowsApps;%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Perl520\\Perl64\\bin;C:\\Perl520\\Perl64\\site\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\gs\\gs9.21\\bin; C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Oracle\\Client\\bin;C:\\Program Files\\Anaconda3\\BOSCH;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\OpenText\\Viewer\\bin;C:\\Program Files\\7-Zip;C:\\Program Files\\MATLAB\\MATLAB Compiler Runtime\\v82\\runtime\\win64;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\MATLAB\\MATLAB Compiler Runtime\\v79\\runtime\\win32;C:\\Program Files (x86)\\Plantronics\\Spokes3G\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Siemens\\Teamcenter12.1\\Visualization\\Products\\Mockup\\ClearanceDB;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\hel83wi\\AppData\\Local\\Microsoft\\WindowsApps;%USERPROFILE%\\AppData\\Local\\Microsoft\\WindowsApps",
+			"PLATFORMIO_CALLER": "vscode"
+		}
+	}
+}
