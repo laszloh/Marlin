@@ -403,8 +403,8 @@
  *
  * :{ '0': "Not used", '1':"100k / 4.7k - EPCOS", '2':"200k / 4.7k - ATC Semitec 204GT-2", '3':"Mendel-parts / 4.7k", '4':"10k !! do not use for a hotend. Bad resolution at high temp. !!", '5':"100K / 4.7k - ATC Semitec 104GT-2 (Used in ParCan & J-Head)", '501':"100K Zonestar (Tronxy X3A)", '6':"100k / 4.7k EPCOS - Not as accurate as Table 1", '7':"100k / 4.7k Honeywell 135-104LAG-J01", '8':"100k / 4.7k 0603 SMD Vishay NTCS0603E3104FXT", '9':"100k / 4.7k GE Sensing AL03006-58.2K-97-G1", '10':"100k / 4.7k RS 198-961", '11':"100k / 4.7k beta 3950 1%", '12':"100k / 4.7k 0603 SMD Vishay NTCS0603E3104FXT (calibrated for Makibox hot bed)", '13':"100k Hisens 3950  1% up to 300°C for hotend 'Simple ONE ' & hotend 'All In ONE'", '20':"PT100 (Ultimainboard V2.x)", '51':"100k / 1k - EPCOS", '52':"200k / 1k - ATC Semitec 204GT-2", '55':"100k / 1k - ATC Semitec 104GT-2 (Used in ParCan & J-Head)", '60':"100k Maker's Tool Works Kapton Bed Thermistor beta=3950", '61':"100k Formbot / Vivedino 3950 350C thermistor 4.7k pullup", '66':"Dyze Design 4.7M High Temperature thermistor", '67':"Slice Engineering 450C High Temperature thermistor", '70':"the 100K thermistor found in the bq Hephestos 2", '71':"100k / 4.7k Honeywell 135-104LAF-J01", '147':"Pt100 / 4.7k", '1047':"Pt1000 / 4.7k", '110':"Pt100 / 1k (non-standard)", '1010':"Pt1000 / 1k (non standard)", '-4':"Thermocouple + AD8495", '-3':"Thermocouple + MAX31855 (only for sensor 0)", '-2':"Thermocouple + MAX6675 (only for sensor 0)", '-1':"Thermocouple + AD595",'998':"Dummy 1", '999':"Dummy 2" }
  */
-#define TEMP_SENSOR_0 5
-#define TEMP_SENSOR_1 5
+#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_1 1
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
@@ -457,18 +457,18 @@
 
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
-#define BANG_MAX 20     // Limits current to nozzle while in bang-bang mode; 255=full current
-#define PID_MAX 40 // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
+#define BANG_MAX 64     // Limits current to nozzle while in bang-bang mode; 255=full current
+#define PID_MAX 32 // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 #if ENABLED(PIDTEMP)
   //#define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of PROGMEM)
   //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
-  #define PID_DEBUG             // Sends debug data to the serial port.
+  //#define PID_DEBUG             // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1        // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
   #define PID_PARAMS_PER_HOTEND   // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
-  #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
+  #define PID_FUNCTIONAL_RANGE 30 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
   #define MAX_OVERSHOOT_PID_AUTOTUNE 30
 
@@ -717,7 +717,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 177.7778, 88.8889, 6400/5, 198.60, 198.60 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 177.7778, 88.8889, 1280, 198.60, 198.60 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -732,7 +732,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 300, 8000, 8000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 500, 8000, 8000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -755,7 +755,7 @@
  *   https://reprap.org/forum/read.php?1,739819
  *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
-#define JUNCTION_DEVIATION
+//#define JUNCTION_DEVIATION
 #if ENABLED(JUNCTION_DEVIATION)
   #define JUNCTION_DEVIATION_MM 0.02  // (mm) Distance from real junction edge
 #endif
@@ -914,7 +914,7 @@
 #define MIN_PROBE_EDGE 20
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED (80*60)
+#define XY_PROBE_SPEED (120*60)
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1169,7 +1169,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1339,7 +1339,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (80*60)
+#define HOMING_FEEDRATE_XY (120*60)
 #define HOMING_FEEDRATE_Z  (6*60)
 
 // Validate that endstops are triggered on homing moves
@@ -1478,7 +1478,7 @@
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
   #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
-  #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
+  #define NOZZLE_PARK_XY_FEEDRATE 120   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE 5      // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
