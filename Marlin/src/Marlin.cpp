@@ -1040,6 +1040,10 @@ void setup() {
     SET_OUTPUT(CONTROLLER_FAN_PIN);
   #endif
 
+  #if ENABLED(USE_STEPPERXY_FAN)
+    SET_OUTPUT(STEPPERXY_FAN_PIN);
+  #endif
+
   #if HAS_STEPPER_RESET
     enableStepperDrivers();
   #endif

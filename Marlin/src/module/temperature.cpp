@@ -1629,6 +1629,10 @@ void Temperature::init() {
   #endif
   #if ENABLED(USE_CONTROLLER_FAN)
     INIT_FAN_PIN(CONTROLLER_FAN_PIN);
+
+    #if ENABLED(USE_STEPPERXY_FAN)
+      INIT_FAN_PIN(STEPPERXY_FAN_PIN);
+    #endif
   #endif
 
   #if MAX6675_SEPARATE_SPI

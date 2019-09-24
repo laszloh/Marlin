@@ -85,15 +85,19 @@
 #define HEATER_1_PIN        8   // 12
 #define HEATER_2_PIN       11   // 13
 #define HEATER_BED_PIN      6
-#define FAN_PIN             10
+#define FAN_PIN            10
+#define FAN1_PIN            4   // 48V Lüfter   
+#define FAN2_PIN           26   // Radiallüfter
+#define FAN3_PIN           25   // PCB Kühler
+#define FAN4_PIN            5   // Hotend Kühler
 
 //
 // Misc. Functions
 //
 #define SDSS               11
 #define LED_PIN            13
-#define FIL_RUNOUT_PIN      44
-#define FIL_RUNOUT2_PIN     42
-#define DOOR_PIN            45
+#define FIL_RUNOUT_PIN     44
+#define FIL_RUNOUT2_PIN    42
+#define DOOR_PIN           45
 #define SOL1_PIN            7
-#define SOL2_PIN            16
+#define SOL2_PIN           16

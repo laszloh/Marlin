@@ -346,6 +346,9 @@ extern millis_t max_inactive_time, stepper_inactive_time;
 
 #if ENABLED(USE_CONTROLLER_FAN)
   extern uint8_t controllerfan_speed;
+  #if ENABLED(USE_STEPPERXY_FAN)
+    extern uint8_t stepperxyfan_speed;
+  #endif
 #endif
 
 #if HAS_POWER_SWITCH
