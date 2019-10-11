@@ -606,12 +606,22 @@
 /**
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
+ *
+ * XEED 2015: 
+ * +----------------+
+ * |       Z2       |
+ * |                |
+ * |                |
+ * |                |
+ * |Z3            Z1|
+ * o----------------+
+ *        door
  */
 #define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3]
-  #define Z_STEPPER_ALIGN_XY { {  10, 290 }, { 150,  10 }, { 290, 290 } }  // Set number of iterations to align
-  #define Z_STEPPER_ALIGN_ITERATIONS 3
+  #define Z_STEPPER_ALIGN_XY { {  260, 20 }, { 150,  200 }, { 20, 20 } }  // Set number of iterations to align
+  #define Z_STEPPER_ALIGN_ITERATIONS 5
   // Enable to restore leveling setup after operation
   #define RESTORE_LEVELING_AFTER_G34
 
@@ -621,7 +631,7 @@
   // Use the amplification factor to de-/increase correction step.
   // In case the stepper (spindle) position is further out than the test point
   // Use a value > 1. NOTE: This may cause instability
-  #define Z_STEPPER_ALIGN_AMP 1.02
+  #define Z_STEPPER_ALIGN_AMP 1.05
   // Stop criterion. If the accuracy is better than this stop iterating early
   #define Z_STEPPER_ALIGN_ACC 0.04
 #endif
