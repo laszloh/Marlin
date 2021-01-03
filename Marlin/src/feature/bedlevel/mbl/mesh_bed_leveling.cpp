@@ -28,6 +28,7 @@
 
   #include "../../../module/motion.h"
   #include "../../../feature/bedlevel/bedlevel.h"
+  #include "../../../lcd/extensible_ui/ui_api.h"
 
   #if ENABLED(EXTENSIBLE_UI)
     #include "../../../lcd/extensible_ui/ui_api.h"
