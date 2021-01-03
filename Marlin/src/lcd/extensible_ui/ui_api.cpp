@@ -294,26 +294,26 @@ namespace ExtUI {
       if (soft_endstops_enabled) switch (axis) {
         case X_AXIS:
           #if ENABLED(MIN_SOFTWARE_ENDSTOP_X)
-            min = soft_endstop[X_AXIS].min;
+            min = soft_endstop.min[X_AXIS];
           #endif
           #if ENABLED(MAX_SOFTWARE_ENDSTOP_X)
-            max = soft_endstop[X_AXIS].max;
+            max = soft_endstop.max[X_AXIS];
           #endif
           break;
         case Y_AXIS:
           #if ENABLED(MIN_SOFTWARE_ENDSTOP_Y)
-            min = soft_endstop[Y_AXIS].min;
+            min = soft_endstop.min[Y_AXIS];
           #endif
           #if ENABLED(MAX_SOFTWARE_ENDSTOP_Y)
-            max = soft_endstop[Y_AXIS].max;
+            max = soft_endstop.max[Y_AXIS];
           #endif
           break;
         case Z_AXIS:
           #if ENABLED(MIN_SOFTWARE_ENDSTOP_Z)
-            min = soft_endstop[Z_AXIS].min;
+            min = soft_endstop.min[Z_AXIS];
           #endif
           #if ENABLED(MAX_SOFTWARE_ENDSTOP_Z)
-            max = soft_endstop[Z_AXIS].max;
+            max = soft_endstop.max[Z_AXIS];
           #endif
         default: break;
       }
@@ -331,7 +331,7 @@ namespace ExtUI {
     constexpr float max_manual_feedrate[XYZE] = MANUAL_FEEDRATE;
     setFeedrate_mm_s(MMM_TO_MMS(max_manual_feedrate[axis]));
 
-    if (!flags.manual_motion) set_destination_from_current();
+    if (!flags.manual_motion) destination = current_position;
     destination[axis] = clamp(position, min, max);
     flags.manual_motion = true;
   }
@@ -341,7 +341,7 @@ namespace ExtUI {
 
     constexpr float max_manual_feedrate[XYZE] = MANUAL_FEEDRATE;
     setFeedrate_mm_s(MMM_TO_MMS(max_manual_feedrate[E_AXIS]));
-    if (!flags.manual_motion) set_destination_from_current();
+    if (!flags.manual_motion) destination = current_position;
     destination[E_AXIS] = position;
     flags.manual_motion = true;
   }
@@ -796,7 +796,7 @@ namespace ExtUI {
     void setLevelingActive(const bool state) { set_bed_leveling_enabled(state); }
     bool getMeshValid() { return leveling_is_valid(); }
     #if HAS_MESH
-      bed_mesh_t getMeshArray() { return Z_VALUES_ARR; }
+      bed_mesh_t& getMeshArray() { return Z_VALUES_ARR; }
       float getMeshPoint(const uint8_t xpos, const uint8_t ypos) { return Z_VALUES(xpos,ypos); }
       void setMeshPoint(const uint8_t xpos, const uint8_t ypos, const float zoff) {
         if (WITHIN(xpos, 0, GRID_MAX_POINTS_X) && WITHIN(ypos, 0, GRID_MAX_POINTS_Y)) {

@@ -40,6 +40,8 @@
   #endif
 #endif
 
+extern bool wait_for_user, wait_for_heatup;
+
 #if HAS_SPI_LCD
   #if ENABLED(STATUS_MESSAGE_SCROLLING)
     uint8_t MarlinUI::status_scroll_offset; // = 0
