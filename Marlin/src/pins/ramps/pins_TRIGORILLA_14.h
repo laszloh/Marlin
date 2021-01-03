@@ -21,157 +21,104 @@
  */
 #pragma once
 
+#pragma once
+
 /**
  * Arduino Mega with RAMPS v1.4 for Anycubic
  */
 
- #if ENABLED(TARGET_LPC1768)
-   #error "Oops!  Set MOTHERBOARD to an LPC1768-based board when building for LPC1768."
- #elif defined(__STM32F1__)
-   #error "Oops!  Set MOTHERBOARD to an STM32F1-based board when building for STM32F1."
- #endif
+#ifdef TARGET_LPC1768
+  #error "Oops! Set MOTHERBOARD to an LPC1768-based board when building for LPC1768."
+#elif defined(__STM32F1__)
+  #error "Oops! Set MOTHERBOARD to an STM32F1-based board when building for STM32F1."
+#endif
 
-// Board labeled pins:
+#if NOT_TARGET(IS_RAMPS_SMART, IS_RAMPS_DUO, IS_RAMPS4DUE, TARGET_LPC1768, __AVR_ATmega1280__, __AVR_ATmega2560__)
+  #error "Oops! Select 'Arduino/Genuino Mega or Mega 2560' (or other appropriate target) in 'Tools > Board.'"
+#endif
 
-#define TG_HEATER_BED_PIN                      8
-#define TG_HEATER_0_PIN                       10
-#define TG_HEATER_1_PIN                       45  // Anycubic Kossel: Unused
+// Steppers
+#define X_STEP_PIN         54
+#define X_DIR_PIN          55
+#define X_ENABLE_PIN       38
 
-#define TG_FAN0_PIN                            9  // Anycubic Kossel: Usually the part cooling fan
-#define TG_FAN1_PIN                            7  // Anycubic Kossel: Unused
-#define TG_FAN2_PIN                           44  // Anycubic Kossel: Hotend fan
+#define Y_STEP_PIN         60
+#define Y_DIR_PIN          61
+#define Y_ENABLE_PIN       56
+
+#define Y2_STEP_PIN        36
+#define Y2_DIR_PIN         34
+#define Y2_ENABLE_PIN      30
+
+#define Z_STEP_PIN         46
+#define Z_DIR_PIN          48
+#define Z_ENABLE_PIN       62
+
+#define Z2_STEP_PIN        36
+#define Z2_DIR_PIN         34
+#define Z2_ENABLE_PIN      30
+
+#define E0_STEP_PIN        26
+#define E0_DIR_PIN         28
+#define E0_ENABLE_PIN      24
+
+#define E1_STEP_PIN        35
+#define E1_DIR_PIN         25
+#define E1_ENABLE_PIN      37
+
+// EndStops
+#define X_MIN_PIN           3
+#define Y_MIN_PIN          42
+#define Z_MIN_PIN          18
+
+#define X_MAX_PIN          43
+#define Y_MAX_PIN          -1
+#define Z_MAX_PIN          -1
+
+// Fans
+#define FAN_PIN             9
+#define FAN2_PIN           44
+#define FAN3_PIN			7
+#define CONTROLLER_FAN_PIN  FAN3_PIN
+
+// Heaters
+#define HEATER_0_PIN       10
+#define HEATER_1_PIN       45
+#define HEATER_BED_PIN      8
+
+// Temperatursensoren
+#define TEMP_0_PIN         13
+#define TEMP_1_PIN         15
+#define TEMP_2_PIN         12
+#define TEMP_BED_PIN       14
 
 // Servos
-//
-#if MB(TRIGORILLA_14_11)
-  #define SERVO0_PIN                           5
-  #define SERVO1_PIN                           4
-  #define SERVO2_PIN                          11
-  #define SERVO3_PIN                           6
+#ifdef NUM_SERVOS
+	#define SERVO0_PIN      11
 
+	#if NUM_SERVOS > 1
+		#define SERVO1_PIN    6
+	#endif
 
 	#if NUM_SERVOS > 2
 		#define SERVO2_PIN    5
 	#endif
 
-#define RAMPS_D10_PIN            TG_HEATER_0_PIN  // HEATER_0_PIN is always RAMPS_D10_PIN in pins_RAMPS.h
-
-#if HAS_MULTI_HOTEND                              // EEF and EEB
-  #define RAMPS_D9_PIN           TG_HEATER_1_PIN
-  #if !TEMP_SENSOR_BED
-    // EEF
-    #define RAMPS_D8_PIN             TG_FAN0_PIN
-  #else
-    // EEB
-    #define RAMPS_D8_PIN       TG_HEATER_BED_PIN
-    #define FAN_PIN                  TG_FAN0_PIN  // Override pin 4 in pins_RAMPS.h
-  #endif
-#elif TEMP_SENSOR_BED
-  // EFB (Anycubic Kossel default)
-  #define RAMPS_D9_PIN               TG_FAN0_PIN
-  #if ENABLED(ANYCUBIC_LCD_CHIRON)
-    #define RAMPS_D8_PIN         TG_HEATER_1_PIN  // Heated bed is connected to HEATER1 output
-  #else
-    #define RAMPS_D8_PIN       TG_HEATER_BED_PIN
-  #endif
-#else
-  // EFF
-  #define RAMPS_D9_PIN               TG_FAN1_PIN
-  #define RAMPS_D8_PIN               TG_FAN0_PIN
-#endif
-
-#if ENABLED(ANYCUBIC_LCD)
- #define BEEPER_PIN       31
- #define SD_DETECT_PIN    49
-#if HAS_MULTI_HOTEND || TEMP_SENSOR_BED           // EEF, EEB, EFB
-  #define FAN1_PIN                   TG_FAN1_PIN
-#endif
-#define FAN2_PIN                     TG_FAN2_PIN
-
-#ifndef E0_AUTO_FAN_PIN
-  #define E0_AUTO_FAN_PIN            TG_FAN2_PIN  // Used in Anycubic Kossel example config
+	#if NUM_SERVOS > 3
+		#define SERVO3_PIN    4
+	#endif
 #endif
 
 #if ENABLED(ANYCUBIC_LCD_I3MEGA)
-  #define CONTROLLER_FAN_PIN         TG_FAN1_PIN
+ #define BEEPER_PIN       31
+ #define SD_DETECT_PIN    49
 #endif
 
-//
-// AnyCubic standard pin mappings
-//
-//  On most printers, endstops are NOT all wired to the appropriate pins on the Trigorilla board.
-//  For instance, on a Chiron, Y axis goes to an aux connector.
-//  There are also other things that have been wired in creative ways.
-//  To enable PIN definitions for a specific printer model, #define the appropriate symbol after
-//  MOTHERBOARD in Configuration.h
-//
-// Limit Switches
-//
-//#define ANYCUBIC_4_MAX_PRO_ENDSTOPS
-#if ENABLED(ANYCUBIC_4_MAX_PRO_ENDSTOPS)
-  #define X_MAX_PIN                           43
-  #define Y_STOP_PIN                          19
-#elif EITHER(ANYCUBIC_LCD_CHIRON, ANYCUBIC_LCD_I3MEGA)
-  #define Y_STOP_PIN                          42
-  #define Z2_MIN_PIN                          43
-  #ifndef Z_MIN_PROBE_PIN
-    #define Z_MIN_PROBE_PIN                    2
-  #endif
-  #ifndef FIL_RUNOUT_PIN
-    #if ENABLED(ANYCUBIC_LCD_CHIRON)
-      #define FIL_RUNOUT_PIN                  33
-    #else
-      #define FIL_RUNOUT_PIN                  19
-    #endif
-  #endif
-  #define BEEPER_PIN                          31
-  #define SD_DETECT_PIN                       49
+#define CASE_LIGHT_PIN		HEATER_1_PIN
 
-			#define SD_DETECT_PIN 49
-			#if ENABLED(LCD_I2C_PANELOLU2)
-				#define BTN_EN1 47  //reverse if the encoder turns the wrong way.
-				#define BTN_EN2 43
-				#define BTN_ENC 32
-				#define SDSS 53
-				#define SD_DETECT_PIN -1
-				#define KILL_PIN 41
-			#elif ENABLED(LCD_I2C_VIKI)
-				#define BTN_EN1 22  //reverse if the encoder turns the wrong way.
-				#define BTN_EN2 7
-				#define BTN_ENC -1
-				#define SDSS 53
-				#define SD_DETECT_PIN 49
-			#elif ENABLED(FULL_GRAPHIC_SMALL_PANEL)
-				#define BEEPER_PIN 37
-
-//
-// AnyCubic made the following changes to 1.1.0-RC8
-// If these are appropriate for your LCD let us know.
-//
-#if 0 && HAS_WIRED_LCD
-
-  // LCD Display output pins
-  #if BOTH(IS_NEWPANEL, PANEL_ONE)
-    #undef LCD_PINS_D6
-    #define LCD_PINS_D6                       57
-  #endif
-
-  // LCD Display input pins
-  #if IS_NEWPANEL
-    #if ANY(VIKI2, miniVIKI)
-      #undef DOGLCD_A0
-      #define DOGLCD_A0                       23
-    #elif ENABLED(ELB_FULL_GRAPHIC_CONTROLLER)
-      #undef BEEPER_PIN
-      #define BEEPER_PIN                      33
-      #undef LCD_BACKLIGHT_PIN
-      #define LCD_BACKLIGHT_PIN               67
-    #endif
-  #elif ENABLED(MINIPANEL)
-    #undef BEEPER_PIN
-    #define BEEPER_PIN                        33
-    #undef DOGLCD_A0
-    #define DOGLCD_A0                         42
-  #endif
-
-#endif // HAS_WIRED_LCD
+// LCD
+#if ENABLED(ANYCUBIC_LCD_I3MEGA)
+	#define KILL_PIN        41
+#else
+	#define KILL_PIN        -1
+#endif
