@@ -114,8 +114,6 @@
  #define SD_DETECT_PIN    49
 #endif
 
-#define CASE_LIGHT_PIN		HEATER_1_PIN
-
 // LCD
 #if ENABLED(ANYCUBIC_LCD_I3MEGA)
 	#define KILL_PIN        41

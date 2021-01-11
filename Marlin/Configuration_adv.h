@@ -416,7 +416,7 @@
 #define FAN_KICKSTART_TIME 1000
 
 // Some coolers may require a non-zero "off" state.
-#define FAN_OFF_PWM  10
+//#define FAN_OFF_PWM  10
 
 /**
  * PWM Fan Scaling
@@ -456,7 +456,7 @@
  *   USE_OCR2A_AS_TOP sacrifices duty cycle control resolution to achieve this broader range of frequencies.
  */
 #if ENABLED(FAST_PWM_FAN)
-  #define FAST_PWM_FAN_FREQUENCY 62500
+  #define FAST_PWM_FAN_FREQUENCY 977
   //#define USE_OCR2A_AS_TOP
 #endif
 
@@ -505,14 +505,14 @@
  */
 #define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  //#define CASE_LIGHT_PIN 4                  // Override the default pin if needed
-  #define INVERT_CASE_LIGHT true              // Set true if Case Light is ON when pin is LOW
-  #define CASE_LIGHT_DEFAULT_ON true          // Set default power-up state on
-  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)
-  //#define CASE_LIGHT_MAX_PWM 128            // Limit pwm
-  //#define CASE_LIGHT_MENU                   // Add Case Light options to the LCD menu
-  //#define CASE_LIGHT_NO_BRIGHTNESS          // Disable brightness control. Enable for non-PWM lighting.
-  //#define CASE_LIGHT_USE_NEOPIXEL           // Use NeoPixel LED as case light, requires NEOPIXEL_LED.
+  #define CASE_LIGHT_PIN HEATER_1_PIN           // Override the default pin if needed
+  #define INVERT_CASE_LIGHT false               // Set true if Case Light is ON when pin is LOW
+  #define CASE_LIGHT_DEFAULT_ON true            // Set default power-up state on
+  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 255     // Set default power-up brightness (0-255, requires PWM pin)
+  //#define CASE_LIGHT_MAX_PWM 128              // Limit pwm
+  //#define CASE_LIGHT_MENU                     // Add Case Light options to the LCD menu
+  //#define CASE_LIGHT_NO_BRIGHTNESS            // Disable brightness control. Enable for non-PWM lighting.
+  //#define CASE_LIGHT_USE_NEOPIXEL             // Use NeoPixel LED as case light, requires NEOPIXEL_LED.
   #if ENABLED(CASE_LIGHT_USE_NEOPIXEL)
     #define CASE_LIGHT_NEOPIXEL_COLOR { 255, 255, 255, 255 } // { Red, Green, Blue, White }
   #endif
