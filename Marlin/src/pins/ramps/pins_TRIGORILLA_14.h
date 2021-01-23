@@ -110,13 +110,12 @@
 #endif
 
 #if ENABLED(ANYCUBIC_LCD_I3MEGA)
- #define BEEPER_PIN       31
- #define SD_DETECT_PIN    49
+	#define BEEPER_PIN       31
+	#define SD_DETECT_PIN    49
+	#define KILL_PIN         41
+#else
+	#define KILL_PIN         -1
 #endif
 
-// LCD
-#if ENABLED(ANYCUBIC_LCD_I3MEGA)
-	#define KILL_PIN        41
-#else
-	#define KILL_PIN        -1
-#endif
+#define SDSS                 53
+#define SD_DETECT_PIN        49
