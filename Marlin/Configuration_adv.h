@@ -506,10 +506,10 @@
 #define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
   #define CASE_LIGHT_PIN HEATER_1_PIN           // Override the default pin if needed
-  #define INVERT_CASE_LIGHT true                // Set true if Case Light is ON when pin is LOW
+  //#define INVERT_CASE_LIGHT false             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON false           // Set default power-up state on
-  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 128     // Set default power-up brightness (0-255, requires PWM pin)
-  //#define CASE_LIGHT_MAX_PWM 128              // Limit pwm
+  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 255     // Set default power-up brightness (0-255, requires PWM pin)
+  //#define CASE_LIGHT_MAX_PWM 255              // Limit pwm
   //#define CASE_LIGHT_MENU                     // Add Case Light options to the LCD menu
   //#define CASE_LIGHT_NO_BRIGHTNESS            // Disable brightness control. Enable for non-PWM lighting.
   //#define CASE_LIGHT_USE_NEOPIXEL             // Use NeoPixel LED as case light, requires NEOPIXEL_LED.
@@ -1939,7 +1939,7 @@
 // @section temperature
 
 // Control heater 0 and heater 1 in parallel.
-#define HEATERS_PARALLEL
+//#define HEATERS_PARALLEL
 
 //===========================================================================
 //================================= Buffers =================================
