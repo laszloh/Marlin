@@ -111,5 +111,7 @@
 
 #define SOL1_PIN                               7  // Misc Connector, pins 1(-) and 2(+) (Out1)
 
+#define SOL2_PIN                              16
+
 // Door Closed Sensor
 //#define DOOR_PIN                            45  // HM1 Connector
