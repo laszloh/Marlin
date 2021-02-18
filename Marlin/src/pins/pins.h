@@ -263,8 +263,6 @@
   #include "mega/pins_EINSTART-S.h"             // ATmega1280, ATmega2560                 env:mega1280 env:mega2560ext
 #elif MB(WANHAO_ONEPLUS)
   #include "mega/pins_WANHAO_ONEPLUS.h"         // ATmega2560                             env:mega2560
-#elif MB(OVERLORD)
-  #include "mega/pins_OVERLORD.h"               // ATmega2560                             env:mega2560
 #elif MB(HJC2560C_REV2)
   #include "mega/pins_HJC2560C_REV2.h"          // ATmega2560                             env:mega2560
 #elif MB(LEAPFROG_XEED2015)
@@ -275,6 +273,8 @@
   #include "mega/pins_PICAOLD.h"                // ATmega2560                             env:mega2560
 #elif MB(INTAMSYS40)
   #include "mega/pins_INTAMSYS40.h"             // ATmega2560                             env:mega2560
+#elif MB(XEED)
+  #include "pins_XEED.h"                        // ATmega2560                             env:mega2560
 
 //
 // ATmega1281, ATmega2561
