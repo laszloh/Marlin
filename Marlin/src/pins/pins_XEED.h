@@ -56,10 +56,7 @@
 //
 // Heaters / Fans
 //
-#undef HEATER_BED_PIN
 #define HEATER_BED_PIN      6
-
-#undef FAN_PIN
 #define FAN_PIN             10
 
 //
@@ -68,10 +65,6 @@
 #define FILAMENT_E0_PIN     44
 #define FILAMENT_E1_PIN     42
 #define DOOR_PIN            45
-#define CASE_LIGHT_PIN      13
-#define SOL1_PIN            16
-
-#undef SOL2_PIN
 #define SOL2_PIN            7
 
 
